@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import React, { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Products: React.FC = () => {
   const [images, setImages] = useState<string[]>([]);
@@ -8,12 +14,16 @@ const Products: React.FC = () => {
     // Fetch images from the API
     const fetchImages = async () => {
       try {
-        const response = await fetch('https://picsum.photos/v2/list?page=1&limit=5');
+        const response = await fetch(
+          "https://picsum.photos/v2/list?page=1&limit=5"
+        );
         const data = await response.json();
-        const imageUrls = data.map((item: { download_url: string }) => item.download_url);
+        const imageUrls = data.map(
+          (item: { download_url: string }) => item.download_url
+        );
         setImages(imageUrls);
       } catch (error) {
-        console.error('Error fetching images:', error);
+        console.error("Error fetching images:", error);
       }
     };
 
@@ -21,14 +31,18 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-[#fae3eb]">
+    <section className="py-16 bg-blue-100">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-8">Product Page</h1>
         <Carousel className="w-1/2">
           <CarouselContent>
             {images.map((imageUrl, index) => (
               <CarouselItem key={index}>
-                <img src={imageUrl} alt={`Image ${index}`} className="w-full h-auto" />
+                <img
+                  src={imageUrl}
+                  alt={`Image ${index}`}
+                  className="w-full h-auto"
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
