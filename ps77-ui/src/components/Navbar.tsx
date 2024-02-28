@@ -22,17 +22,17 @@ const Navbar: React.FC = () => {
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8 ">
-                <Link to="/" className="hover:text-blue-300">
-                  Početna
+                <Link to="/" className="hover:text-red-500 font-medium">
+                  POČETNA
                 </Link>
-                <Link to="/products" className="hover:text-blue-300">
-                  Proizvodi
+                <Link to="/products" className="hover:text-red-500 font-medium">
+                  PROIZVODI
                 </Link>
-                <Link to="/about" className="hover:text-blue-300">
-                  O nama
+                <Link to="/about" className="hover:text-red-500 font-medium">
+                  O NAMA
                 </Link>
-                <Link to="/contact" className="hover:text-blue-300">
-                  Kontakt
+                <Link to="/contact" className="hover:text-red-500 font-medium">
+                  KONTAKT
                 </Link>
               </div>
             </div>
@@ -71,17 +71,17 @@ const Navbar: React.FC = () => {
           }`}
         >
           <div className="px-8">
-            <div className="flex flex-col gap-8 font-bold tracking-wider">
-              <Link to="/" className="hover:text-blue-300">
+            <div className="flex flex-col gap-8 font-bold">
+              <Link to="/" className="hover:hover:text-red-500">
                 Početna
               </Link>
-              <Link to="/products" className="hover:text-blue-300">
+              <Link to="/products" className="hover:hover:text-red-500">
                 Proizvodi
               </Link>
-              <Link to="/about" className="hover:text-blue-300">
+              <Link to="/about" className="hover:hover:text-red-500">
                 O nama
               </Link>
-              <Link to="/contact" className="hover:text-blue-300">
+              <Link to="/contact" className="hover:hover:text-red-500">
                 Kontakt
               </Link>
             </div>

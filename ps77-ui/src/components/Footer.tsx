@@ -4,16 +4,16 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white p-4 mt-8">
+    <footer className="text-white p-4 bg-gray-500">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div className="text-black">
+        <div className="">
           <p>Ul. Marka Marica. 3, 31400, Đakovo</p>
           <p>Telefon: 123 456 7890</p>
           <p>E-mail: mail@gmail.com</p>
         </div>
 
         <div className="mt-4 md:mt-0">
-          <p className="text-black">Zapratite nas na društvenim mrežama:</p>
+          <p className="">Zapratite nas na društvenim mrežama:</p>
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/p/Slatka-%C5%BDelja-100063583868326/"
