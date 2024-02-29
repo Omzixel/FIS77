@@ -22,17 +22,33 @@ const Navbar: React.FC = () => {
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8 ">
-                <Link to="/" className="hover:text-red-500 font-medium">
+                <Link
+                  to="/"
+                  className="hover:text-red-500 font-medium relative group"
+                >
                   POČETNA
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
-                <Link to="/products" className="hover:text-red-500 font-medium">
+                <Link
+                  to="/products"
+                  className="hover:text-red-500 font-medium relative group"
+                >
                   PROIZVODI
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
-                <Link to="/about" className="hover:text-red-500 font-medium">
+                <Link
+                  to="/about"
+                  className="hover:text-red-500 font-medium relative group"
+                >
                   O NAMA
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
-                <Link to="/contact" className="hover:text-red-500 font-medium">
+                <Link
+                  to="/contact"
+                  className="hover:text-red-500 font-medium relative group"
+                >
                   KONTAKT
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
               </div>
             </div>

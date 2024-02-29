@@ -55,25 +55,34 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gray-100 text-center">
-        <p className="text-xl pt-5 font-bold">Što nudimo?</p>
-        <div className="w-1/3 text-center bg-gray-200 mx-auto mt-5">
-          Photo Studio 77 nudi vrhunske usluge izrade fotografija i videozapisa
-          koje zadovoljavaju širok spektar potreba i želja. Naša stručnost i
-          predanost osiguravaju da svaki projekt bude obrađen s pažnjom i
-          kreativnošću koji su nam inherentni.
+      <div className="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 gap-8">
+        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+          <h2 className="text-3xl font-bold text-center mb-6">What We Offer</h2>
+          <p className="text-lg">
+            Photo Studio 77 offers top-notch services in photography and
+            videography, catering to a wide range of needs and desires. Our
+            expertise and dedication ensure that each project is handled with
+            the care and creativity that are inherent to us.
+          </p>
         </div>
-        <div className="w-1/3 text-center bg-gray-200 mx-auto mt-5">
-          <p className="text-lg font-semibold">Fotografije</p>
-          Portreti: Izrađujemo portrete koji pričaju priče i zauvijek zadržavaju
-          trenutke posebnih emocija.
-          <br />
-          Događaji: Snimamo važne trenutke vaših događaja, od vjenčanja do
-          korporativnih sastanaka, bilježeći svaki detalj s pažnjom i
-          preciznošću.
-          <br />
-          Proizvodi: Predstavljamo vaše proizvode na način koji privlači pažnju
-          i produbljuje vezu s vašim kupcima.
+
+        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+          <h3 className="text-2xl font-semibold mb-4">Photography</h3>
+          <ul className="text-lg">
+            <li className="mb-4">
+              <strong>Portraits:</strong> Capturing moments of special emotions
+              with storytelling portraits.
+            </li>
+            <li className="mb-4">
+              <strong>Events:</strong> Documenting important moments from
+              weddings to corporate meetings with attention to detail.
+            </li>
+            <li>
+              <strong>Products:</strong> Showcasing your products in an
+              attention-grabbing way, deepening the connection with your
+              customers.
+            </li>
+          </ul>
           <Carousel plugins={[plugin.current]}>
             <CarouselContent>
               {images.map((imageUrl, index) => (
@@ -90,15 +99,24 @@ const Home: React.FC = () => {
             <CarouselNext />
           </Carousel>
         </div>
-        <div className="w-1/3 text-center bg-green-500 mx-auto mt-5">
-          <p className="text-lg font-semibold">Videozapisi</p>
-          Reklamni videozapisi: Kreiramo dinamične videozapise koji
-          predstavljaju vašu marku na originalan i privlačan način.
-          <br /> Događaji: Snimamo i uređujemo videozapise koji uhvataju
-          atmosferu i suštinske trenutke vaših događaja.
-          <br />
-          Glazbeni spotovi: Pružamo kreativne vizualne interpretacije glazbe
-          koje ističu umjetnički izričaj i estetiku.
+
+        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+          <h3 className="text-2xl font-semibold mb-4">Videography</h3>
+          <ul className="text-lg">
+            <li className="mb-4">
+              <strong>Commercial Videos:</strong> Crafting dynamic videos that
+              represent your brand uniquely and attractively.
+            </li>
+            <li className="mb-4">
+              <strong>Events:</strong> Shooting and editing videos capturing the
+              atmosphere and essence of your events.
+            </li>
+            <li>
+              <strong>Music Videos:</strong> Providing creative visual
+              interpretations of music, highlighting artistic expression and
+              aesthetics.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
