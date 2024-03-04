@@ -31,10 +31,10 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-blue-100">
+    <section className="py-16 bg-gray-100">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-8">Product Page</h1>
-        <Carousel className="w-1/2">
+        <Carousel className="w-2/3">
           <CarouselContent>
             {images.map((imageUrl, index) => (
               <CarouselItem key={index}>

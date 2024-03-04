@@ -1,11 +1,11 @@
 const About = () => {
   return (
-    <section className="py-16 bg-blue-100 flex items-center justify-center">
+    <section className="py-16 bg-gray-100 flex items-center justify-center">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center">
         <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
           <img
             className="rounded-lg w-full"
-            src="https://i.ibb.co/6NDwF7d/413979415-856362963159825-8024410639689083445-n.jpg"
+            src="https://static.showit.co/800/fJYakwDdRxab52BqxsYEvw/57329/wedding_photographer_bristol_-_gavin_jacob_power.jpg"
             alt="413979415-856362963159825-8024410639689083445-n"
           />
         </div>

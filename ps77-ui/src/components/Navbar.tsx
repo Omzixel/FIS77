@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import { useState, FC } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+interface IProps {
+  chooseTheme: (isLightTheme: boolean) => void;
+  isLightTheme: boolean;
+  setCssTheme: (className: string) => void;
+  className: string;
+}
+
+const Navbar: FC<IProps> = ({
+  chooseTheme,
+  isLightTheme,
+  setCssTheme,
+  className,
+}) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -50,6 +62,25 @@ const Navbar: React.FC = () => {
                   KONTAKT
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
+
+                <label
+                  id="toggleMode"
+                  className="relative inline-flex items-center cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={isLightTheme}
+                    onChange={(e) => {
+                      localStorage.setItem("theme", `"${!isLightTheme}"`);
+                      chooseTheme(!isLightTheme);
+                      setCssTheme(!isLightTheme ? "light" : "dark");
+                    }}
+                  />
+                  <div
+                    title="Dark/Light Mode"
+                    className={`w-11 h-6 bg-gray-200 outline-none ring-4 ring-white rounded-full peer dark:bg-gray-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all theme-${className}-nineteen`}
+                  ></div>
+                </label>
               </div>
             </div>
             {/* secondary */}

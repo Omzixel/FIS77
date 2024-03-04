@@ -57,12 +57,12 @@ const Home: React.FC = () => {
       </section>
       <div className="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 gap-8">
         <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-bold text-center mb-6">What We Offer</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">Što nudimo?</h2>
           <p className="text-lg">
-            Photo Studio 77 offers top-notch services in photography and
-            videography, catering to a wide range of needs and desires. Our
-            expertise and dedication ensure that each project is handled with
-            the care and creativity that are inherent to us.
+            Photo Studio 77 nudi vrhunske usluge u fotografiji i videografiji,
+            prilagođene širokom spektru potreba i želja. Naše stručnosti i
+            predanost osiguravaju da svaki projekt bude obrađen s pažnjom i
+            kreativnošću koje su nam inherentne.
           </p>
         </div>
 
@@ -70,17 +70,17 @@ const Home: React.FC = () => {
           <h3 className="text-2xl font-semibold mb-4">Photography</h3>
           <ul className="text-lg">
             <li className="mb-4">
-              <strong>Portraits:</strong> Capturing moments of special emotions
-              with storytelling portraits.
+              <strong>Portreti:</strong> Snimanje trenutaka posebnih emocija
+              pomoću narativnih portreta.
             </li>
             <li className="mb-4">
-              <strong>Events:</strong> Documenting important moments from
-              weddings to corporate meetings with attention to detail.
+              <strong>Događaji:</strong> Dokumentiranje važnih trenutaka od
+              vjenčanja do korporativnih sastanaka s pažnjom na detalje.
             </li>
             <li>
-              <strong>Products:</strong> Showcasing your products in an
-              attention-grabbing way, deepening the connection with your
-              customers.
+              <strong>Proizvodi:</strong> Predstavljanje vaših proizvoda na
+              način koji privlači pažnju, produbljujući povezanost s vašim
+              kupcima.
             </li>
           </ul>
           <Carousel plugins={[plugin.current]}>
@@ -99,22 +99,21 @@ const Home: React.FC = () => {
             <CarouselNext />
           </Carousel>
         </div>
-
         <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-          <h3 className="text-2xl font-semibold mb-4">Videography</h3>
+          <h3 className="text-2xl font-semibold mb-4">Videografija</h3>
           <ul className="text-lg">
             <li className="mb-4">
-              <strong>Commercial Videos:</strong> Crafting dynamic videos that
-              represent your brand uniquely and attractively.
+              <strong>Komercijalni Videozapisi:</strong> Oblikovanje dinamičnih
+              videozapisa koji jedinstveno i privlačno predstavljaju vaš brand.
             </li>
             <li className="mb-4">
-              <strong>Events:</strong> Shooting and editing videos capturing the
-              atmosphere and essence of your events.
+              <strong>Događaji:</strong> Snimanje i uređivanje videozapisa koji
+              hvataju atmosferu i bit vaših događaja.
             </li>
             <li>
-              <strong>Music Videos:</strong> Providing creative visual
-              interpretations of music, highlighting artistic expression and
-              aesthetics.
+              <strong>Glazbeni Videozapisi:</strong> Pružanje kreativnih
+              vizualnih interpretacija glazbe, ističući umjetnički izraz i
+              estetiku.
             </li>
           </ul>
         </div>
