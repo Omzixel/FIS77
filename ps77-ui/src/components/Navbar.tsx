@@ -1,4 +1,4 @@
-import { useState, FC } from "react";
+import { useState, FC, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface IProps {
@@ -16,8 +16,12 @@ const Navbar: FC<IProps> = ({
 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  useEffect(() => {
+    console.log("ClassName: " + className);
+  }, [className]);
+
   return (
-    <div className="app">
+    <div className={`theme-${className}-main`}>
       <nav>
         <div className="max-w-7xl mx-auto">
           <div className="flex mx-auto justify-between w-5/6 ">
@@ -62,33 +66,10 @@ const Navbar: FC<IProps> = ({
                   KONTAKT
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </Link>
-
-                <label
-                  id="toggleMode"
-                  className="relative inline-flex items-center cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={isLightTheme}
-                    onChange={(e) => {
-                      localStorage.setItem("theme", `"${!isLightTheme}"`);
-                      chooseTheme(!isLightTheme);
-                      setCssTheme(!isLightTheme ? "light" : "dark");
-                    }}
-                  />
-                  <div
-                    title="Dark/Light Mode"
-                    className={`w-11 h-6 bg-gray-200 outline-none ring-4 ring-white rounded-full peer dark:bg-gray-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all theme-${className}-nineteen`}
-                  ></div>
-                </label>
               </div>
             </div>
-            {/* secondary */}
+            {/* Secondary menu */}
             <div className="flex gap-6">
-              <div className="hidden xs:flex items-center gap-10">
-                <div className="hidden lg:flex items-center gap-2"></div>
-                <div></div>
-              </div>
               {/* Mobile navigation toggle */}
               <div className="lg:hidden flex items-center">
                 <button onClick={() => setToggleMenu(!toggleMenu)}>
@@ -108,10 +89,39 @@ const Navbar: FC<IProps> = ({
                   </svg>
                 </button>
               </div>
+              {/* Toggle for Dark/Light Mode */}
+              <div className="flex items-center">
+                <label
+                  id="toggleMode"
+                  className="relative inline-flex items-center cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={isLightTheme}
+                    onChange={(e) => {
+                      const newTheme = !isLightTheme;
+                      localStorage.setItem("theme", JSON.stringify(newTheme));
+                      chooseTheme(newTheme);
+                      setCssTheme(newTheme ? "light" : "dark");
+                    }}
+                    className="sr-only"
+                  />
+                  <div
+                    title="Dark/Light Mode"
+                    className={`w-14 h-7 bg-gray-300 rounded-full shadow-inner focus:outline-none relative dark:bg-gray-700 transition duration-300 ease-in-out`}
+                  >
+                    <div
+                      className={`absolute w-7 h-7 bg-white rounded-full shadow-md transform transition duration-300 ease-in-out ${
+                        isLightTheme ? "translate-x-0" : "translate-x-7"
+                      }`}
+                    ></div>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        {/* mobile navigation */}
+        {/* Mobile navigation */}
         <div
           className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${
             !toggleMenu ? "h-0" : "h-full"
@@ -122,13 +132,13 @@ const Navbar: FC<IProps> = ({
               <Link to="/" className="hover:hover:text-red-500">
                 Početna
               </Link>
-              <Link to="/products" className="hover:hover:text-red-500">
+              <Link to="/" className="hover:hover:text-red-500">
                 Proizvodi
               </Link>
-              <Link to="/about" className="hover:hover:text-red-500">
+              <Link to="/" className="hover:hover:text-red-500">
                 O nama
               </Link>
-              <Link to="/contact" className="hover:hover:text-red-500">
+              <Link to="/" className="hover:hover:text-red-500">
                 Kontakt
               </Link>
             </div>
