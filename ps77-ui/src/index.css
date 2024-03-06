@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 .theme-dark-main {
-  @apply bg-[#121212];
+  @apply bg-[#222222];
 }
 
 .theme-light-main {
-  @apply bg-white;
+  @apply bg-gray-100;
+}
+
+.theme-dark-text {
+  @apply text-white;
+}
+
+.theme-light-text {
+  @apply text-[#121212];
+}
+
+.theme-dark-secondary {
+  @apply bg-[#3b3b3b];
+}
+
+.theme-light-secondary {
+  @apply bg-gray-100;
 }

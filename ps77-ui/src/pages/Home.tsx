@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +8,11 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const Home: React.FC = () => {
+interface IProps {
+  className: string;
+}
+
+const Home: FC<IProps> = ({ className }) => {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -35,7 +39,7 @@ const Home: React.FC = () => {
   );
 
   return (
-    <div className="">
+    <div className={`theme-${className}-text theme-${className}-main`}>
       <section
         className="bg-cover h-96"
         style={{
@@ -56,7 +60,9 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 gap-8">
-        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+        <div
+          className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
+        >
           <h2 className="text-3xl font-bold text-center mb-6">Što nudimo?</h2>
           <p className="text-lg">
             Photo Studio 77 nudi vrhunske usluge u fotografiji i videografiji,
@@ -66,7 +72,9 @@ const Home: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+        <div
+          className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
+        >
           <h3 className="text-2xl font-semibold mb-4">Photography</h3>
           <ul className="text-lg">
             <li className="mb-4">
@@ -99,7 +107,9 @@ const Home: React.FC = () => {
             <CarouselNext />
           </Carousel>
         </div>
-        <div className="bg-gray-100 rounded-lg shadow-lg p-6">
+        <div
+          className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
+        >
           <h3 className="text-2xl font-semibold mb-4">Videografija</h3>
           <ul className="text-lg">
             <li className="mb-4">
