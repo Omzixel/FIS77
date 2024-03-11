@@ -11,8 +11,15 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-36 bg-gray-100">
-      <div className="container mx-auto grid grid-cols-2 gap-8">
+    <section className="bg-gray-100">
+      <section
+        className="bg-cover h-96"
+        style={{
+          backgroundImage:
+            'url("https://images.news18.com/ibnlive/uploads/2021/08/sun-photo-16293134144x3.jpg")',
+        }}
+      ></section>
+      <div className="container mx-auto grid grid-cols-2 gap-8 py-5">
         <div className="max-w-md">
           <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
 

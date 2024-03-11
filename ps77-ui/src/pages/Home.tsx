@@ -75,7 +75,7 @@ const Home: FC<IProps> = ({ className }) => {
         <div
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
-          <h3 className="text-2xl font-semibold mb-4">Photography</h3>
+          <h3 className="text-2xl font-semibold mb-4">Fotografija</h3>
           <ul className="text-lg">
             <li className="mb-4">
               <strong>Portreti:</strong> Snimanje trenutaka posebnih emocija

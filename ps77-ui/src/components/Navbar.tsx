@@ -68,6 +68,19 @@ const Navbar: FC<IProps> = ({
                   )}
                 </Link>
                 <Link
+                  to="/gallery"
+                  className={`hover:text-red-500 font-medium relative group ${
+                    location.pathname === "/gallery"
+                      ? "border-b-2 border-red-500"
+                      : ""
+                  }`}
+                >
+                  GALERIJA
+                  {location.pathname !== "/gallery" && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  )}
+                </Link>
+                <Link
                   to="/about"
                   className={`hover:text-red-500 font-medium relative group ${
                     location.pathname === "/about"
@@ -169,6 +182,13 @@ const Navbar: FC<IProps> = ({
                 onClick={handleLinkClick}
               >
                 Proizvodi
+              </Link>
+              <Link
+                to="/gallery"
+                className="hover:hover:text-red-500"
+                onClick={handleLinkClick}
+              >
+                Galerija
               </Link>
               <Link
                 to="/about"

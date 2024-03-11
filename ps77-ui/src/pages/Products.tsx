@@ -1,56 +1,120 @@
-import React, { useEffect, useState } from "react";
+import React, { FC } from "react";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-const Products: React.FC = () => {
-  const [images, setImages] = useState<string[]>([]);
+const photos = [
+  {
+    photoName: "Amaterska fotografija",
+    photoPrice: "0,35 €",
+    photoDimensions: "10x15",
+  },
+  {
+    photoName: "Amaterska fotografija",
+    photoPrice: "0,80 €",
+    photoDimensions: "15x20",
+  },
+  {
+    photoName: "Profesionalna fotografija",
+    photoPrice: "0,70 €",
+    photoDimensions: "10x15",
+  },
+  {
+    photoName: "Amaterska fotografija",
+    photoPrice: "1,60 €",
+    photoDimensions: "15x20",
+  },
+];
 
-  useEffect(() => {
-    // Fetch images from the API
-    const fetchImages = async () => {
-      try {
-        const response = await fetch(
-          "https://picsum.photos/v2/list?page=1&limit=5"
-        );
-        const data = await response.json();
-        const imageUrls = data.map(
-          (item: { download_url: string }) => item.download_url
-        );
-        setImages(imageUrls);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
+const papers = [
+  {
+    paperName: "A4 CB  1-150",
+    paperPrice: "0,07 €",
+  },
+  {
+    paperName: "A3 CB  1-50",
+    paperPrice: "0,13 €",
+  },
+  {
+    paperName: "A4 Color",
+    paperPrice: "0,35 €",
+  },
+  {
+    paperName: "A3 Color",
+    paperPrice: "0,65 €",
+  },
+];
 
-    fetchImages();
-  }, []);
+interface IProps {
+  className: string;
+}
 
+const Products: FC<IProps> = ({ className }) => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Product Page</h1>
-        <Carousel className="w-2/3">
-          <CarouselContent>
-            {images.map((imageUrl, index) => (
-              <CarouselItem key={index}>
-                <img
-                  src={imageUrl}
-                  alt={`Image ${index}`}
-                  className="w-full h-auto"
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
-    </section>
+    <div className={`theme-${className}-text theme-${className}-main pb-5`}>
+      <section
+        className="bg-cover h-96"
+        style={{
+          backgroundImage:
+            'url("https://cdn.shopify.com/s/files/1/0070/7032/files/diy-product-photography.jpg?v=1599161908")',
+        }}
+      ></section>
+      <h1 className={`w-1/2 mx-auto text-center font-semibold text-xl my-5`}>
+        IZRADA FOTOGRAFIJE
+      </h1>
+      <Table className={`w-1/2 mx-auto`}>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[200px]">Izrada fotografije</TableHead>
+            <TableHead>Dimenzija</TableHead>
+            <TableHead className="text-right">Cijena</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {photos.map((photoName) => (
+            <TableRow key={photoName.photoPrice}>
+              <TableCell className="font-medium">
+                {photoName.photoName}
+              </TableCell>
+              <TableCell>{photoName.photoDimensions}</TableCell>
+              <TableCell className="text-right">
+                {photoName.photoPrice}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <h1
+        className={`w-1/2 mx-auto text-center font-semibold text-xl mt-10 mb-5`}
+      >
+        FOTOKOPIRANJE
+      </h1>
+      <Table className={`w-1/2 mx-auto`}>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[200px]">Izrada fotografije</TableHead>
+            <TableHead className="text-right">Cijena</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {papers.map((paperName) => (
+            <TableRow key={paperName.paperPrice}>
+              <TableCell className="font-medium">
+                {paperName.paperName}
+              </TableCell>
+              <TableCell className="text-right">
+                {paperName.paperPrice}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 };
 
