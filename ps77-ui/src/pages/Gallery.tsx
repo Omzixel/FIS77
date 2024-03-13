@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import Modal from "react-modal";
 
 interface IProps {
@@ -11,7 +11,11 @@ const Gallery: FC<IProps> = ({ className }) => {
     null
   );
 
-  const images = ["../../public/img1.jpg", "../../public/img2.jpg"]; // Add more image URLs here
+  const images = ["../../public/img1.jpg", "../../public/img2.jpg"];
+
+  useEffect(() => {
+    Modal.setAppElement("#root");
+  }, []);
 
   const openModal = (index: number) => {
     setSelectedImageIndex(index);
@@ -38,23 +42,62 @@ const Gallery: FC<IProps> = ({ className }) => {
 
   return (
     <div
-      className={`theme-${className}-text theme-${className}-main flex mx-auto gap-5 justify-center my-2`}
+      className={`theme-${className}-text theme-${className}-main flex mx-auto gap-5 justify-center py-2`}
     >
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
-          className="w-1/4"
+          className="w-1/4 cursor-pointer"
+          alt={`Image ${index + 1}`}
           onClick={() => openModal(index)}
         />
       ))}
 
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal">
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" // Tailwind classes for dark overlay
+        className="modal"
+      >
         {selectedImageIndex !== null && (
-          <div className="my-[10%] flex justify-center">
-            <button onClick={() => navigate("prev")}>Previous</button>
-            <img src={images[selectedImageIndex]} className="w-1/3" />
-            <button onClick={() => navigate("next")}>Next</button>
+          <div className="my-[10%] flex flex-col items-center relative">
+            <button
+              onClick={closeModal}
+              className=" text-white bg-black bg-opacity-50 p-2 rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => navigate("prev")}
+              className="text-white absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 rounded"
+            >
+              Previous
+            </button>
+            <img
+              src={images[selectedImageIndex]}
+              className="w-1/3"
+              alt={`Image ${selectedImageIndex + 1}`}
+            />
+            <button
+              onClick={() => navigate("next")}
+              className="text-white absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 rounded"
+            >
+              Next
+            </button>
           </div>
         )}
       </Modal>

@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 
-const Contact: React.FC = () => {
+interface IProps {
+  className: string;
+}
+
+const Contact: FC<IProps> = ({ className }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -11,7 +15,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-100">
+    <section className={`theme-${className}-text theme-${className}-main`}>
       <section
         className="bg-cover h-96"
         style={{

@@ -35,9 +35,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home className={className} />} />
         <Route path="/products" element={<Products className={className} />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery className={className} />} />
+        <Route path="/about" element={<About className={className} />} />
+        <Route path="/contact" element={<Contact className={className} />} />
       </Routes>
 
       <Footer />

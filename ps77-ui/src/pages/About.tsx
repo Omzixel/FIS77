@@ -1,6 +1,25 @@
-const About = () => {
+import React, { FC } from "react";
+
+interface IProps {
+  className: string;
+}
+
+const About: FC<IProps> = ({ className }) => {
   return (
-    <section className="py-24 bg-gray-100 flex items-center justify-center ">
+    <div className={`theme-${className}-text theme-${className}-main`}>
+      <section
+        className="bg-cover h-96"
+        style={{
+          backgroundImage:
+            'url("https://png.pngtree.com/background/20230512/original/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-picture-image_2503007.jpg")',
+        }}
+      >
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold text-white h-24 pt-10">
+            Photo Studio 77
+          </h1>
+        </div>
+      </section>
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center">
         <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
           <img
@@ -10,8 +29,8 @@ const About = () => {
           />
         </div>
         <div className="w-full md:w-1/2 pl-0 md:pl-8">
-          <h1 className="text-4xl font-bold mb-8">O nama</h1>
-          <div className="text-gray-700 p-8">
+          <h1 className="text-4xl font-bold mb-5 mt-5 ml-7">O nama</h1>
+          <div className=" p-8">
             <p className="mb-4">
               Dobrodošli u <span className="font-bold">Photo Studio 77</span> -
               mjesto gdje se ostvaruju savršenstvo!
@@ -48,7 +67,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
