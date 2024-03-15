@@ -6,6 +6,11 @@ interface IProps {
   isLightTheme: boolean;
   setCssTheme: (className: string) => void;
   className: string;
+
+  chooseLang: (isLangEng: boolean) => void;
+  isLangEng: boolean;
+  setCssLang: (langName: string) => void;
+  langName: string;
 }
 
 const Navbar: FC<IProps> = ({
@@ -13,6 +18,10 @@ const Navbar: FC<IProps> = ({
   isLightTheme,
   setCssTheme,
   className,
+  chooseLang,
+  isLangEng,
+  setCssLang,
+  langName,
 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -131,9 +140,23 @@ const Navbar: FC<IProps> = ({
               </div>
               {/* Toggle for Dark/Light Mode */}
               <div className="flex items-center">
+                <select
+                  value={isLangEng ? "ENG" : "CRO"}
+                  onChange={(e) => {
+                    const newLang = e.target.value === "ENG";
+                    localStorage.setItem("lang", JSON.stringify(newLang));
+                    chooseLang(newLang);
+                    setCssLang(newLang ? "eng" : "cro");
+                  }}
+                  className="relative inline-flex items-center cursor-pointer bg-gray-300 rounded-full shadow-inner focus:outline-none dark:bg-gray-700 transition duration-300 ease-in-out"
+                >
+                  <option value="CRO">CRO</option>
+                  <option value="ENG">ENG</option>
+                </select>
+
                 <label
                   id="toggleMode"
-                  className="relative inline-flex items-center cursor-pointer"
+                  className="relative inline-flex items-center cursor-pointer ml-2"
                 >
                   <input
                     type="checkbox"

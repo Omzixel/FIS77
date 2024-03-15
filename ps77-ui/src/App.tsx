@@ -23,6 +23,20 @@ function App() {
     setclassName(className);
   };
 
+  const [isLangEng, setIsLangEng] = useState<boolean>(
+    /true/.test(String(localStorage.getItem("lang")))
+  );
+  const [langName, setLangName] = useState<string>(
+    /true/.test(String(localStorage.getItem("lang"))) ? "eng" : "cro"
+  );
+  const chooseLang = (isLangEng: boolean) => {
+    setIsLangEng(isLangEng);
+  };
+
+  const setCssLang = (langName: string) => {
+    setLangName(langName);
+  };
+
   return (
     <>
       <Navbar
@@ -30,10 +44,17 @@ function App() {
         isLightTheme={isLightTheme}
         setCssTheme={setCssTheme}
         className={className}
+        chooseLang={chooseLang}
+        isLangEng={isLangEng}
+        setCssLang={setCssLang}
+        langName={langName}
       />
 
       <Routes>
-        <Route path="/" element={<Home className={className} />} />
+        <Route
+          path="/"
+          element={<Home className={className} langName={langName} />}
+        />
         <Route path="/products" element={<Products className={className} />} />
         <Route path="/gallery" element={<Gallery className={className} />} />
         <Route path="/about" element={<About className={className} />} />
