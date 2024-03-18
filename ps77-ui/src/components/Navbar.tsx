@@ -1,5 +1,6 @@
 import { useState, FC } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { textContent } from "@/components/text components/Navbar_TC";
 
 interface IProps {
   chooseTheme: (isLightTheme: boolean) => void;
@@ -58,7 +59,9 @@ const Navbar: FC<IProps> = ({
                     location.pathname === "/" ? "border-b-2 border-red-500" : ""
                   }`}
                 >
-                  POČETNA
+                  {langName === "eng"
+                    ? textContent.eng.first_route
+                    : textContent.cro.first_route}
                   {location.pathname !== "/" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
@@ -71,7 +74,9 @@ const Navbar: FC<IProps> = ({
                       : ""
                   }`}
                 >
-                  PROIZVODI
+                  {langName === "eng"
+                    ? textContent.eng.second_route
+                    : textContent.cro.second_route}
                   {location.pathname !== "/products" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
@@ -84,7 +89,9 @@ const Navbar: FC<IProps> = ({
                       : ""
                   }`}
                 >
-                  GALERIJA
+                  {langName === "eng"
+                    ? textContent.eng.third_route
+                    : textContent.cro.third_route}
                   {location.pathname !== "/gallery" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
@@ -97,7 +104,9 @@ const Navbar: FC<IProps> = ({
                       : ""
                   }`}
                 >
-                  O NAMA
+                  {langName === "eng"
+                    ? textContent.eng.fourth_route
+                    : textContent.cro.fourth_route}
                   {location.pathname !== "/about" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
@@ -110,7 +119,9 @@ const Navbar: FC<IProps> = ({
                       : ""
                   }`}
                 >
-                  KONTAKT
+                  {langName === "eng"
+                    ? textContent.eng.fifth_route
+                    : textContent.cro.fifth_route}
                   {location.pathname !== "/contact" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
@@ -197,35 +208,45 @@ const Navbar: FC<IProps> = ({
                 onClick={handleLinkClick}
               >
                 {" "}
-                Početna
+                {langName === "eng"
+                  ? textContent.eng.first_route
+                  : textContent.cro.first_route}
               </Link>
               <Link
                 to="/products"
                 className="hover:hover:text-red-500"
                 onClick={handleLinkClick}
               >
-                Proizvodi
+                {langName === "eng"
+                  ? textContent.eng.second_route
+                  : textContent.cro.second_route}
               </Link>
               <Link
                 to="/gallery"
                 className="hover:hover:text-red-500"
                 onClick={handleLinkClick}
               >
-                Galerija
+                {langName === "eng"
+                  ? textContent.eng.third_route
+                  : textContent.cro.third_route}
               </Link>
               <Link
                 to="/about"
                 className="hover:hover:text-red-500"
                 onClick={handleLinkClick}
               >
-                O nama
+                {langName === "eng"
+                  ? textContent.eng.fourth_route
+                  : textContent.cro.fourth_route}
               </Link>
               <Link
                 to="/contact"
                 className="hover:hover:text-red-500"
                 onClick={handleLinkClick}
               >
-                Kontakt
+                {langName === "eng"
+                  ? textContent.eng.fifth_route
+                  : textContent.cro.fifth_route}
               </Link>
             </div>
           </div>

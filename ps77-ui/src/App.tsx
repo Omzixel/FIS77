@@ -61,7 +61,16 @@ function App() {
         <Route path="/contact" element={<Contact className={className} />} />
       </Routes>
 
-      <Footer />
+      <Footer
+        chooseTheme={chooseTheme}
+        isLightTheme={isLightTheme}
+        setCssTheme={setCssTheme}
+        className={className}
+        chooseLang={chooseLang}
+        isLangEng={isLangEng}
+        setCssLang={setCssLang}
+        langName={langName}
+      />
     </>
   );
 }

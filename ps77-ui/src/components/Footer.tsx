@@ -1,19 +1,55 @@
-// src/components/Footer.tsx
+import React, { FC } from "react";
+import { textContent } from "@/components/text components/Footer_TC";
 
-import React from "react";
+interface IProps {
+  chooseTheme: (isLightTheme: boolean) => void;
+  isLightTheme: boolean;
+  setCssTheme: (className: string) => void;
+  className: string;
 
-const Footer: React.FC = () => {
+  chooseLang: (isLangEng: boolean) => void;
+  isLangEng: boolean;
+  setCssLang: (langName: string) => void;
+  langName: string;
+}
+
+const Footer: FC<IProps> = ({
+  chooseTheme,
+  isLightTheme,
+  setCssTheme,
+  className,
+  chooseLang,
+  isLangEng,
+  setCssLang,
+  langName,
+}) => {
   return (
     <footer className="text-white p-4 bg-gray-500 font-semibold">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="">
-          <p>Ul. Marka Marica. 3, 31400, Đakovo</p>
-          <p>Telefon: 123 456 7890</p>
-          <p>E-mail: mail@gmail.com</p>
+          <p>
+            {langName === "eng"
+              ? textContent.eng.first_element
+              : textContent.cro.first_element}
+          </p>
+          <p>
+            {langName === "eng"
+              ? textContent.eng.second_element
+              : textContent.cro.second_element}
+          </p>
+          <p>
+            {langName === "eng"
+              ? textContent.eng.third_element
+              : textContent.cro.third_element}
+          </p>
         </div>
 
         <div className="mt-4 md:mt-0">
-          <p className="">Zapratite nas na društvenim mrežama:</p>
+          <p className="">
+            {langName === "eng"
+              ? textContent.eng.fourth_element
+              : textContent.cro.fourth_element}
+          </p>
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/p/Slatka-%C5%BDelja-100063583868326/"
