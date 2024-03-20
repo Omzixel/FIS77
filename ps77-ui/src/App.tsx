@@ -55,22 +55,22 @@ function App() {
           path="/"
           element={<Home className={className} langName={langName} />}
         />
-        <Route path="/products" element={<Products className={className} />} />
+        <Route
+          path="/products"
+          element={<Products className={className} langName={langName} />}
+        />
         <Route path="/gallery" element={<Gallery className={className} />} />
-        <Route path="/about" element={<About className={className} />} />
-        <Route path="/contact" element={<Contact className={className} />} />
+        <Route
+          path="/about"
+          element={<About className={className} langName={langName} />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact className={className} langName={langName} />}
+        />
       </Routes>
 
-      <Footer
-        chooseTheme={chooseTheme}
-        isLightTheme={isLightTheme}
-        setCssTheme={setCssTheme}
-        className={className}
-        chooseLang={chooseLang}
-        isLangEng={isLangEng}
-        setCssLang={setCssLang}
-        langName={langName}
-      />
+      <Footer className={className} langName={langName} />
     </>
   );
 }

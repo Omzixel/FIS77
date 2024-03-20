@@ -1,10 +1,12 @@
 import React, { FC } from "react";
+import { textContent } from "@/components/text components/About_TC";
 
 interface IProps {
   className: string;
+  langName: string;
 }
 
-const About: FC<IProps> = ({ className }) => {
+const About: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main`}>
       <section
@@ -29,40 +31,34 @@ const About: FC<IProps> = ({ className }) => {
           />
         </div>
         <div className="w-full md:w-1/2 pl-0 md:pl-8">
-          <h1 className="text-4xl font-bold mb-5 mt-5 ml-7">O nama</h1>
+          <h1 className="text-4xl font-bold mb-5 mt-5 ml-7">
+            {langName === "eng" ? textContent.eng.title : textContent.cro.title}
+          </h1>
           <div className=" p-8">
             <p className="mb-4">
-              Dobrodošli u <span className="font-bold">Photo Studio 77</span> -
-              mjesto gdje se ostvaruju savršenstvo!
+              {langName === "eng"
+                ? textContent.eng.section1
+                : textContent.cro.section1}
             </p>
             <p className="mb-4">
-              Naša priča započinje s strašću prema fotografiji i videografiji,
-              te ljubavlju prema stvaranju savršenih vizualnih doživljaja.
-              <span className="font-bold">Photo Studio 77</span> je obiteljska
-              tvrtka posvećena stvaranju izvanrednih fotografija i videozapisa
-              koji će zabilježiti najvažnije trenutke u vašem životu.
+              {langName === "eng"
+                ? textContent.eng.section2
+                : textContent.cro.section2}
             </p>
             <p className="mb-4">
-              Kroz pažljiv odabir najkvalitetnije opreme i neprekidno
-              usavršavanje naših fotografa i snimatelja, svakodnevno stvaramo
-              čaroliju koja će oživjeti vaše najdragocjenije uspomene i pružiti
-              vam nezaboravno iskustvo uživanja u vizualnim umjetnostima.
-              Posebnu pažnju posvećujemo detaljima i estetici, kako bismo svaki
-              kadar ili snimku pretvorili u pravo malo umjetničko djelo.
+              {langName === "eng"
+                ? textContent.eng.section3
+                : textContent.cro.section3}
             </p>
             <p className="mb-4">
-              Bez obzira trebate li fotografije za posebnu prigodu, poput
-              vjenčanja ili rođendana, profesionalne portrete ili snimke za
-              promociju vašeg poslovanja, ili jednostavno želite zabilježiti
-              trenutke s obitelji i prijateljima,{" "}
-              <span className="font-bold">Photo Studio 77</span> je tu da ispuni
-              vaše najslađe želje.
+              {langName === "eng"
+                ? textContent.eng.section4
+                : textContent.cro.section4}
             </p>
             <p>
-              Radujemo se što ćemo vas povesti na put vizualnog užitka i
-              dijeliti s vama radost stvaranja nezaboravnih fotografija i
-              videozapisa. Hvala vam što ste dio{" "}
-              <span className="font-bold">Vizualnih Uspomena</span>!
+              {langName === "eng"
+                ? textContent.eng.section5
+                : textContent.cro.section5}
             </p>
           </div>
         </div>

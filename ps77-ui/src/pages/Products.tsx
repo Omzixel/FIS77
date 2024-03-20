@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { textContent } from "@/components/text components/Products_TC";
 
 const photos = [
   {
@@ -52,9 +53,11 @@ const papers = [
 
 interface IProps {
   className: string;
+
+  langName: string;
 }
 
-const Products: FC<IProps> = ({ className }) => {
+const Products: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main pb-5`}>
       <section
@@ -65,14 +68,24 @@ const Products: FC<IProps> = ({ className }) => {
         }}
       ></section>
       <h1 className={`w-1/2 mx-auto text-center font-semibold text-xl my-5`}>
-        IZRADA FOTOGRAFIJE
+        {langName === "eng"
+          ? textContent.eng.main_title
+          : textContent.cro.main_title}
       </h1>
       <Table className={`w-1/2 mx-auto`}>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[200px]">Izrada fotografije</TableHead>
+            <TableHead className="w-[200px]">
+              {langName === "eng"
+                ? textContent.eng.product1.product_name
+                : textContent.cro.product1.product_name}
+            </TableHead>
             <TableHead>Dimenzija</TableHead>
-            <TableHead className="text-right">Cijena</TableHead>
+            <TableHead className="text-right">
+              {langName === "eng"
+                ? textContent.eng.product1.product_price
+                : textContent.cro.product1.product_price}
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -2,27 +2,11 @@ import React, { FC } from "react";
 import { textContent } from "@/components/text components/Footer_TC";
 
 interface IProps {
-  chooseTheme: (isLightTheme: boolean) => void;
-  isLightTheme: boolean;
-  setCssTheme: (className: string) => void;
   className: string;
-
-  chooseLang: (isLangEng: boolean) => void;
-  isLangEng: boolean;
-  setCssLang: (langName: string) => void;
   langName: string;
 }
 
-const Footer: FC<IProps> = ({
-  chooseTheme,
-  isLightTheme,
-  setCssTheme,
-  className,
-  chooseLang,
-  isLangEng,
-  setCssLang,
-  langName,
-}) => {
+const Footer: FC<IProps> = ({ className, langName }) => {
   return (
     <footer className="text-white p-4 bg-gray-500 font-semibold">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
