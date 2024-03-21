@@ -1,6 +1,8 @@
 import { useState, FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { textContent } from "@/components/text components/Navbar_TC";
+import { TbSunHigh } from "react-icons/tb";
+import { IoMoonSharp } from "react-icons/io5";
 
 interface IProps {
   chooseTheme: (isLightTheme: boolean) => void;
@@ -149,7 +151,7 @@ const Navbar: FC<IProps> = ({
                   </svg>
                 </button>
               </div>
-              {/* Toggle for Dark/Light Mode */}
+              {/* Toggle for Lang Mode */}
               <div className="flex items-center">
                 <select
                   value={isLangEng ? "ENG" : "CRO"}
@@ -164,32 +166,31 @@ const Navbar: FC<IProps> = ({
                   <option value="CRO">CRO</option>
                   <option value="ENG">ENG</option>
                 </select>
-
+                {/* Toggle for Light/Dark Mode */}
                 <label
                   id="toggleMode"
                   className="relative inline-flex items-center cursor-pointer ml-2"
                 >
-                  <input
-                    type="checkbox"
-                    checked={isLightTheme}
-                    onChange={(e) => {
-                      const newTheme = !isLightTheme;
-                      localStorage.setItem("theme", JSON.stringify(newTheme));
-                      chooseTheme(newTheme);
-                      setCssTheme(newTheme ? "light" : "dark");
-                    }}
-                    className="sr-only"
-                  />
-                  <div
-                    title="Dark/Light Mode"
-                    className={`w-14 h-7 bg-gray-300 rounded-full shadow-inner focus:outline-none relative dark:bg-gray-700 transition duration-300 ease-in-out`}
-                  >
-                    <div
-                      className={`absolute w-7 h-7 bg-white rounded-full shadow-md transform transition duration-300 ease-in-out ${
-                        isLightTheme ? "translate-x-0" : "translate-x-7"
-                      }`}
-                    ></div>
-                  </div>
+                  {isLightTheme ? (
+                    <TbSunHigh
+                      className="text-yellow-500"
+                      size={25}
+                      onClick={() => {
+                        localStorage.setItem("theme", JSON.stringify(false));
+                        chooseTheme(false);
+                        setCssTheme("dark");
+                      }}
+                    />
+                  ) : (
+                    <IoMoonSharp
+                      size={25}
+                      onClick={() => {
+                        localStorage.setItem("theme", JSON.stringify(true));
+                        chooseTheme(true);
+                        setCssTheme("light");
+                      }}
+                    />
+                  )}
                 </label>
               </div>
             </div>

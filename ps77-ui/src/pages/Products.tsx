@@ -11,22 +11,34 @@ import { textContent } from "@/components/text components/Products_TC";
 
 const photos = [
   {
-    photoName: "Amaterska fotografija",
+    photoName: {
+      hrv: "Amaterska fotografija",
+      eng: "Amateur Photography",
+    },
     photoPrice: "0,35 €",
     photoDimensions: "10x15",
   },
   {
-    photoName: "Amaterska fotografija",
+    photoName: {
+      hrv: "Amaterska fotografija",
+      eng: "Amateur Photography",
+    },
     photoPrice: "0,80 €",
     photoDimensions: "15x20",
   },
   {
-    photoName: "Profesionalna fotografija",
+    photoName: {
+      hrv: "Profesionalna fotografija",
+      eng: "Professional Photography",
+    },
     photoPrice: "0,70 €",
     photoDimensions: "10x15",
   },
   {
-    photoName: "Amaterska fotografija",
+    photoName: {
+      hrv: "Amaterska fotografija",
+      eng: "Amateur Photography",
+    },
     photoPrice: "1,60 €",
     photoDimensions: "15x20",
   },
@@ -53,7 +65,6 @@ const papers = [
 
 interface IProps {
   className: string;
-
   langName: string;
 }
 
@@ -77,27 +88,25 @@ const Products: FC<IProps> = ({ className, langName }) => {
           <TableRow>
             <TableHead className="w-[200px]">
               {langName === "eng"
-                ? textContent.eng.product1.product_name
-                : textContent.cro.product1.product_name}
+                ? textContent.eng.product.product_name
+                : textContent.cro.product.product_name}
             </TableHead>
             <TableHead>Dimenzija</TableHead>
             <TableHead className="text-right">
               {langName === "eng"
-                ? textContent.eng.product1.product_price
-                : textContent.cro.product1.product_price}
+                ? textContent.eng.product.product_price
+                : textContent.cro.product.product_price}
             </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {photos.map((photoName) => (
-            <TableRow key={photoName.photoPrice}>
+          {photos.map((photo, index) => (
+            <TableRow key={index}>
               <TableCell className="font-medium">
-                {photoName.photoName}
+                {langName === "eng" ? photo.photoName.eng : photo.photoName.hrv}
               </TableCell>
-              <TableCell>{photoName.photoDimensions}</TableCell>
-              <TableCell className="text-right">
-                {photoName.photoPrice}
-              </TableCell>
+              <TableCell>{photo.photoDimensions}</TableCell>
+              <TableCell className="text-right">{photo.photoPrice}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -110,19 +119,23 @@ const Products: FC<IProps> = ({ className, langName }) => {
       <Table className={`w-1/2 mx-auto`}>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[200px]">Izrada fotografije</TableHead>
-            <TableHead className="text-right">Cijena</TableHead>
+            <TableHead className="w-[200px]">
+              {langName === "eng"
+                ? textContent.eng.product.product_name
+                : textContent.cro.product.product_name}
+            </TableHead>
+            <TableHead className="text-right">
+              {langName === "eng"
+                ? textContent.eng.product.product_price
+                : textContent.cro.product.product_price}
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {papers.map((paperName) => (
-            <TableRow key={paperName.paperPrice}>
-              <TableCell className="font-medium">
-                {paperName.paperName}
-              </TableCell>
-              <TableCell className="text-right">
-                {paperName.paperPrice}
-              </TableCell>
+          {papers.map((paper, index) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium">{paper.paperName}</TableCell>
+              <TableCell className="text-right">{paper.paperPrice}</TableCell>
             </TableRow>
           ))}
         </TableBody>

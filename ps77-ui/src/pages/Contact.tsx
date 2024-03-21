@@ -1,4 +1,4 @@
-import React, { useState, FC } from "react";
+import { useState, FC } from "react";
 import { textContent } from "@/components/text components/Contact_TC";
 
 interface IProps {
