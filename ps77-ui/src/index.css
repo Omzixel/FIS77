@@ -3,25 +3,33 @@
 @tailwind utilities;
 
 .theme-dark-main {
-  @apply bg-[#222222];
+  @apply bg-[#222222] transition duration-300 ease-out;
 }
 
 .theme-light-main {
-  @apply bg-gray-100;
+  @apply bg-gray-100 transition duration-300 ease-out;
 }
 
 .theme-dark-text {
-  @apply text-white;
+  @apply text-white transition duration-300 ease-out;
 }
 
 .theme-light-text {
-  @apply text-[#121212];
+  @apply text-[#121212] transition duration-300 ease-out;
 }
 
 .theme-dark-secondary {
-  @apply bg-[#3b3b3b];
+  @apply bg-[#3b3b3b] transition duration-300 ease-out;
 }
 
 .theme-light-secondary {
-  @apply bg-gray-100;
+  @apply bg-gray-100 transition duration-300 ease-out;
+}
+
+.theme-dark-dark-text {
+  @apply text-[#121212] transition duration-300 ease-out;
+}
+
+.theme-dark-light-text {
+  @apply text-white transition duration-300 ease-out;
 }

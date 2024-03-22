@@ -161,10 +161,12 @@ const Navbar: FC<IProps> = ({
                     chooseLang(newLang);
                     setCssLang(newLang ? "eng" : "cro");
                   }}
-                  className="relative inline-flex items-center cursor-pointer bg-gray-300 rounded-full shadow-inner focus:outline-none dark:bg-gray-700 transition duration-300 ease-in-out"
+                  className={`theme-${className}-main theme-${className}-text relative inline-flex items-center cursor-pointer rounded-lg`}
                 >
-                  <option value="CRO">CRO</option>
-                  <option value="ENG">ENG</option>
+                  <option className={`text-center`} value="CRO">
+                    CRO
+                  </option>
+                  <option className={`text-center`}>ENG</option>
                 </select>
                 {/* Toggle for Light/Dark Mode */}
                 <label
@@ -173,7 +175,7 @@ const Navbar: FC<IProps> = ({
                 >
                   {isLightTheme ? (
                     <TbSunHigh
-                      className="text-yellow-500"
+                      className="text-yellow-500 hover:text-yellow-600 hover:scale-105 transition duration-300 ease-in-out"
                       size={25}
                       onClick={() => {
                         localStorage.setItem("theme", JSON.stringify(false));
@@ -184,6 +186,7 @@ const Navbar: FC<IProps> = ({
                   ) : (
                     <IoMoonSharp
                       size={25}
+                      className="hover:text-blue-400 hover:scale-105 transition duration-300 ease-in-out"
                       onClick={() => {
                         localStorage.setItem("theme", JSON.stringify(true));
                         chooseTheme(true);
