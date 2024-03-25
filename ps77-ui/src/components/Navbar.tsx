@@ -200,11 +200,13 @@ const Navbar: FC<IProps> = ({
           </div>
         </div>
         <div
-          className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${
+          className={`fixed z-40 w-full overflow-hidden flex flex-col lg:hidden gap-12 origin-top duration-700 ${
             !toggleMenu ? "h-0" : "h-full"
-          }`}
+          } ${className === "dark" ? "bg-[#222222]" : "bg-gray-100"}`}
         >
-          <div className="px-8">
+          <div
+            className={`px-8 theme-${className}-main theme-${className}-text`}
+          >
             <div className="flex flex-col gap-8 font-bold">
               <Link
                 to="/"
