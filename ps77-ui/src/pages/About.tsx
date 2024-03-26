@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { textContent } from "@/components/text components/About_TC";
 
 interface IProps {

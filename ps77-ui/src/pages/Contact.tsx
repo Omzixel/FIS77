@@ -11,7 +11,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log("Form submitted:", { name, email, message });
   };

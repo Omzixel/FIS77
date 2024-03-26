@@ -70,7 +70,7 @@ function App() {
         />
       </Routes>
 
-      <Footer className={className} langName={langName} />
+      <Footer langName={langName} />
     </>
   );
 }

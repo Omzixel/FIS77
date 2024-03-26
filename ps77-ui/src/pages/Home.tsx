@@ -9,6 +9,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { textContent } from "@/components/text components/Home_TC";
 
+import img1 from "../images/img1.jpg";
+import img2 from "../images/img2.jpg";
+import img3 from "../images/img3.jpg";
+
 interface IProps {
   className: string;
   langName: string;
@@ -20,11 +24,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageUrls = [
-          "../../public/img1.jpg",
-          "../../public/img2.jpg",
-          "../../public/img3.jpg",
-        ];
+        const imageUrls = [`${img1}`, `${img2}`, `${img3}`];
         setImages(imageUrls);
       } catch (error) {
         console.error("Error fetching images:", error);
@@ -89,19 +89,31 @@ const Home: FC<IProps> = ({ className, langName }) => {
           </h3>
           <ul className="text-lg">
             <li className="mb-4">
-              <strong>Portraits:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section2.subTitle1
+                  : textContent.cro.section2.subTitle1}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section2.text_portrait
                 : textContent.cro.section2.text_portrait}
             </li>
             <li className="mb-4">
-              <strong>Events:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section2.subTitle2
+                  : textContent.cro.section2.subTitle2}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section2.text_events
                 : textContent.cro.section2.text_events}
             </li>
             <li>
-              <strong>Products:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section2.subTitle3
+                  : textContent.cro.section2.subTitle3}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section2.text_events
                 : textContent.cro.section2.text_events}
@@ -133,19 +145,31 @@ const Home: FC<IProps> = ({ className, langName }) => {
           </h3>
           <ul className="text-lg">
             <li className="mb-4">
-              <strong>Commercial Videos:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section3.subTitle1
+                  : textContent.cro.section3.subTitle1}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section3.text_commercial
                 : textContent.cro.section3.text_commercial}
             </li>
             <li className="mb-4">
-              <strong>Events:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section3.subTitle1
+                  : textContent.cro.section3.subTitle2}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section3.text_events
                 : textContent.cro.section3.text_events}
             </li>
             <li>
-              <strong>Music Videos:</strong>{" "}
+              <strong>
+                {langName === "eng"
+                  ? textContent.eng.section3.subTitle3
+                  : textContent.cro.section3.subTitle3}
+              </strong>{" "}
               {langName === "eng"
                 ? textContent.eng.section3.text_music
                 : textContent.cro.section3.text_music}

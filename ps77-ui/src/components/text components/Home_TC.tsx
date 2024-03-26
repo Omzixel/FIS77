@@ -7,12 +7,18 @@ interface Home_TC {
   };
   section2: {
     title: string;
+    subTitle1: string;
+    subTitle2: string;
+    subTitle3: string;
     text_portrait: string;
     text_events: string;
     text_products: string;
   };
   section3: {
     title: string;
+    subTitle1: string;
+    subTitle2: string;
+    subTitle3: string;
     text_commercial: string;
     text_events: string;
     text_music: string;
@@ -29,6 +35,9 @@ export const textContent: { [key: string]: Home_TC } = {
     },
     section2: {
       title: "Fotografija",
+      subTitle1: "Portreti: ",
+      subTitle2: "Događaji: ",
+      subTitle3: "Proizvodi: ",
       text_portrait:
         "Snimanje trenutaka posebnih emocija pomoću narativnih portreta.",
       text_events:
@@ -38,6 +47,9 @@ export const textContent: { [key: string]: Home_TC } = {
     },
     section3: {
       title: "Videografija",
+      subTitle1: "Komercijalni videozapis: ",
+      subTitle2: "Događaji: ",
+      subTitle3: "Glazebni videozapisi: ",
       text_commercial:
         "Oblikovanje dinamičnih videozapisa koji jedinstveno i privlačno predstavljaju vaš brand.",
       text_events:
@@ -56,6 +68,9 @@ export const textContent: { [key: string]: Home_TC } = {
     },
     section2: {
       title: "Photography",
+      subTitle1: "Portraits: ",
+      subTitle2: "Events: ",
+      subTitle3: "Products: ",
       text_portrait:
         "Capturing moments of special emotions using narrative portraits.",
       text_events:
@@ -65,6 +80,9 @@ export const textContent: { [key: string]: Home_TC } = {
     },
     section3: {
       title: "Videografija",
+      subTitle1: "Commercial Videos: ",
+      subTitle2: "Events: ",
+      subTitle3: "Music Videos: ",
       text_commercial:
         "Creating dynamic videos that uniquely and attractively represent your brand.",
       text_events:

@@ -1,5 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import Modal from "react-modal";
+
+import img1 from "../images/img1.jpg";
+import img2 from "../images/img2.jpg";
 
 interface IProps {
   className: string;
@@ -11,7 +14,7 @@ const Gallery: FC<IProps> = ({ className }) => {
     null
   );
 
-  const images = ["../../public/img1.jpg", "../../public/img2.jpg"];
+  const images = [`${img1}`, `${img2}`];
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -42,7 +45,7 @@ const Gallery: FC<IProps> = ({ className }) => {
 
   return (
     <div
-      className={`theme-${className}-text theme-${className}-main flex mx-auto gap-5 justify-center py-2`}
+      className={`theme-${className}-text theme-${className}-main flex mx-auto gap-5 justify-center py-2 pb-96`}
     >
       {images.map((image, index) => (
         <img

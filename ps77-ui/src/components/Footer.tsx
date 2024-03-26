@@ -1,12 +1,13 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { textContent } from "@/components/text components/Footer_TC";
+import fbLogo from "../images/fbLogo.svg";
+import igLogo from "../images/igLogo.svg";
 
 interface IProps {
-  className: string;
   langName: string;
 }
 
-const Footer: FC<IProps> = ({ className, langName }) => {
+const Footer: FC<IProps> = ({ langName }) => {
   return (
     <footer className="text-white p-4 bg-zinc-800 font-semibold">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -42,7 +43,7 @@ const Footer: FC<IProps> = ({ className, langName }) => {
             >
               <img
                 className="w-8 hover:scale-110 transition ease-out"
-                src="../../public/igLogo.svg"
+                src={igLogo}
               />
             </a>
             <a
@@ -52,7 +53,7 @@ const Footer: FC<IProps> = ({ className, langName }) => {
             >
               <img
                 className="w-7 hover:scale-110 transition ease-out"
-                src="../../public/fbLogo.svg"
+                src={fbLogo}
               />
             </a>
           </div>

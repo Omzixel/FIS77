@@ -4,6 +4,8 @@ import { textContent } from "@/components/text components/Navbar_TC";
 import { TbSunHigh } from "react-icons/tb";
 import { IoMoonSharp } from "react-icons/io5";
 
+import logoImg from "../images/logo.jpg";
+
 interface IProps {
   chooseTheme: (isLightTheme: boolean) => void;
   isLightTheme: boolean;
@@ -42,11 +44,7 @@ const Navbar: FC<IProps> = ({
             {/* Primary menu and logo */}
             <div className="flex items-center gap-16 my-12">
               {/* logo */}
-              <img
-                className="w-14 rounded-xl"
-                src="../../public/logo.jpg"
-                alt=""
-              />
+              <img className="w-14 rounded-xl" src={logoImg} alt="" />
               <div>
                 <a
                   href="/"
