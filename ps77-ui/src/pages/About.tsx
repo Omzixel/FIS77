@@ -18,7 +18,7 @@ const About: FC<IProps> = ({ className, langName }) => {
       >
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold text-white h-24 pt-10">
-            Photo Studio 77
+            Foto Ivan Studio 77
           </h1>
         </div>
       </section>

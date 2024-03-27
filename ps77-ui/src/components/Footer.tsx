@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { textContent } from "@/components/text components/Footer_TC";
 import fbLogo from "../images/fbLogo.svg";
-import igLogo from "../images/igLogo.svg";
+import ytLogo from "../images/ytLogo.svg";
 
 interface IProps {
   langName: string;
@@ -37,23 +37,23 @@ const Footer: FC<IProps> = ({ langName }) => {
           </p>
           <div className="flex space-x-4 mt-1">
             <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                className="w-8 hover:scale-110 transition ease-out"
-                src={igLogo}
-              />
-            </a>
-            <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/profile.php?id=61553018457674"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 className="w-7 hover:scale-110 transition ease-out"
                 src={fbLogo}
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/@ivanbilandzicfotostudioiva3543"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-8 hover:scale-110 transition ease-out"
+                src={ytLogo}
               />
             </a>
           </div>

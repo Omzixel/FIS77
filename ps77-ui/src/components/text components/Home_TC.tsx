@@ -27,11 +27,11 @@ interface Home_TC {
 
 export const textContent: { [key: string]: Home_TC } = {
   cro: {
-    bg_main_text: "Dobrodošli u Photo Studio 77",
+    bg_main_text: "Dobrodošli u Foto Ivan Studio 77",
     bg_img_text: "Uzbuđenje trenutka, snaga emocija i beskonačna kreativnost",
     section1: {
       title: "Što nudimo?",
-      text: "Photo Studio 77 nudi vrhunske usluge u fotografiji i videografiji, prilagođene širokom spektru potreba i želja. Naše stručnosti i predanost osiguravaju da svaki projekt bude obrađen s pažnjom i kreativnošću koje su nam inherentne.",
+      text: "Foto Ivan Studio 77 nudi vrhunske usluge u fotografiji i videografiji, prilagođene širokom spektru potreba i želja. Naše stručnosti i predanost osiguravaju da svaki projekt bude obrađen s pažnjom i kreativnošću koje su nam inherentne.",
     },
     section2: {
       title: "Fotografija",
@@ -59,12 +59,12 @@ export const textContent: { [key: string]: Home_TC } = {
     },
   },
   eng: {
-    bg_main_text: "Welcome to Photo Studio 77",
+    bg_main_text: "Welcome to Foto Ivan Studio 77",
     bg_img_text:
       "The excitement of the moment, the power of emotions and infinite creativity",
     section1: {
       title: "What We Offer?",
-      text: "Photo studio 77 offers top quality photography and video services, adapted to a wide range of needs and desires. Our expertise and dedication ensures that each project is handled with care and creativity inherent in us.",
+      text: "Foto Ivan Studio 77 offers top quality photography and video services, adapted to a wide range of needs and desires. Our expertise and dedication ensures that each project is handled with care and creativity inherent in us.",
     },
     section2: {
       title: "Photography",

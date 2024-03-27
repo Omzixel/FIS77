@@ -7,15 +7,15 @@ interface Footer_TC {
 
 export const textContent: { [key: string]: Footer_TC } = {
   cro: {
-    first_element: "Ul. Marka Marica. 3, 31400, Đakovo",
-    second_element: "Telefon: 123 456 7890",
-    third_element: "E-mail: mail@gmail.com",
+    first_element: "Ul. Gorjani 81, 32280, Ivankovo",
+    second_element: "Telefon: 098 906 6722",
+    third_element: "E-mail: fotostudioivan77@gmail.com",
     fourth_element: "Zapratite nas na društvenim mrežama:",
   },
   eng: {
-    first_element: "St. Marka Marica. 3, 31400, Đakovo",
-    second_element: "Telephone: 123 456 7890",
-    third_element: "E-mail: mail@gmail.com",
+    first_element: "St. Gorjani 81. 32280, Ivankovo",
+    second_element: "Telephone: 098 906 6722",
+    third_element: "E-mail: fotostudioivan77@gmail.com",
     fourth_element: "Follow us on our socials:",
   },
 };

@@ -25,8 +25,8 @@ export const textContent: { [key: string]: Footer_TC } = {
     },
     section_info: {
       miniTitle: "Kontakt informacije",
-      email: "Email: mail@gmail.com",
-      phone: "Telefon: 123 456 7890",
+      email: "Email: fotostudioivan77@gmail.com",
+      phone: "Telefon: 098 906 6722",
       workingHours: "Radni dani: Pon-Pet, 08:00 - 16:00",
     },
   },

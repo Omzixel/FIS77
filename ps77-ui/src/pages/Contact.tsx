@@ -25,7 +25,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             'url("https://images.news18.com/ibnlive/uploads/2021/08/sun-photo-16293134144x3.jpg")',
         }}
       ></section>
-      <div className="container mx-auto grid grid-cols-2 gap-8 py-5">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
         <div className="max-w-md">
           <h1 className="text-4xl font-bold mb-8">
             {langName === "eng" ? textContent.eng.title : textContent.cro.title}
@@ -81,7 +81,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
 
             <button
               type="submit"
-              className="bg-red-600 text-white w-1/6 p-1 rounded-sm hover:bg-red-500"
+              className="bg-red-600 text-white w-full p-2 rounded-sm hover:bg-red-500"
             >
               {langName === "eng"
                 ? textContent.eng.section_form.btn
@@ -112,11 +112,14 @@ const Contact: FC<IProps> = ({ className, langName }) => {
               : textContent.cro.section_info.workingHours}
           </p>
           <br />
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.747392959472!2d18.408357876623555!3d45.313528143478564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475c5585716b977d%3A0x6e6062a1a42d681f!2sLidl!5e0!3m2!1sen!2shr!4v1709053810766!5m2!1sen!2shr"
-            width="400"
-            height="300"
-          ></iframe>
+          <div className="map-container border border-gray-300">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.181713586857!2d18.675519076622386!3d45.28454964540689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cf5f23980f7c9%3A0xb85fac8a9e7b813!2sGorjani%2081%2C%2032281%2C%20Ivankovo!5e0!3m2!1sen!2shr!4v1711467646995!5m2!1sen!2shr"
+              width="100%"
+              height="300"
+              className="border-0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
