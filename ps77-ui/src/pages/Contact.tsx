@@ -1,5 +1,6 @@
 import { useState, FC } from "react";
 import { textContent } from "@/components/text components/Contact_TC";
+import emailjs from "@emailjs/browser";
 
 interface IProps {
   className: string;
@@ -13,7 +14,21 @@ const Contact: FC<IProps> = ({ className, langName }) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", { name, email, message });
+
+    const templateParams = {
+      username: name,
+      email,
+      message,
+    };
+
+    emailjs
+      .send(serviceID, templateID, templateParams, userID)
+      .then((response: any) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((error: any) => {
+        console.log("FAILED...", error);
+      });
   };
 
   return (
