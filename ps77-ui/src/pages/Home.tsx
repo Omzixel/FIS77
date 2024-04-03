@@ -12,6 +12,8 @@ import { textContent } from "@/components/text components/Home_TC";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
+import photoIcon from "../images/photoIcon.svg";
+import videoIcon from "../images/videoIcon.svg";
 
 interface IProps {
   className: string;
@@ -69,8 +71,8 @@ const Home: FC<IProps> = ({ className, langName }) => {
         >
           <h2 className="text-3xl font-bold text-center mb-6">
             {langName === "eng"
-              ? textContent.eng.section2.title
-              : textContent.cro.section2.title}
+              ? textContent.eng.section1.title
+              : textContent.cro.section1.title}
           </h2>
           <p className="text-lg">
             {langName === "eng"
@@ -82,7 +84,8 @@ const Home: FC<IProps> = ({ className, langName }) => {
         <div
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
-          <h3 className="text-2xl font-semibold mb-4">
+          <h3 className="text-2xl font-semibold mb-4 flex">
+            <img className="w-10 mr-3" src={photoIcon} />
             {langName === "eng"
               ? textContent.eng.section2.title
               : textContent.cro.section2.title}
@@ -138,7 +141,8 @@ const Home: FC<IProps> = ({ className, langName }) => {
         <div
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
-          <h3 className="text-2xl font-semibold mb-4">
+          <h3 className="text-2xl font-semibold mb-4 flex">
+            <img className="w-8 mr-3" src={videoIcon} />
             {langName === "eng"
               ? textContent.eng.section3.title
               : textContent.cro.section3.title}
