@@ -1,5 +1,6 @@
 import { useState, FC } from "react";
 import { textContent } from "@/components/text components/Contact_TC";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import emailjs from "@emailjs/browser";
 
 interface IProps {
@@ -11,8 +12,15 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [spinner, setSpinner] = useState(false);
+  const [successfullMsg, setSuccessfullMsg] = useState("");
+
+  const templateID = "dummyValue";
+  const serviceID = "dummyValue";
+  const userID = "dummyValue";
 
   const handleSubmit = (e: any) => {
+    setSpinner(true);
     e.preventDefault();
 
     const templateParams = {
@@ -24,10 +32,17 @@ const Contact: FC<IProps> = ({ className, langName }) => {
     emailjs
       .send(serviceID, templateID, templateParams, userID)
       .then((response: any) => {
-        console.log("SUCCESS!", response.status, response.text);
+        setSpinner(false);
+        setSuccessfullMsg("Your message was sent successfully");
+        setTimeout(() => {
+          setSuccessfullMsg("");
+        }, 4000);
+        setName("");
+        setEmail("");
+        setMessage("");
       })
       .catch((error: any) => {
-        console.log("FAILED...", error);
+        setSpinner(false);
       });
   };
 
@@ -48,7 +63,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700">
+              <label htmlFor="name" className="block">
                 {langName === "eng"
                   ? textContent.eng.section_form.name
                   : textContent.cro.section_form.name}
@@ -64,7 +79,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700">
+              <label htmlFor="email" className="block">
                 {langName === "eng"
                   ? textContent.eng.section_form.email
                   : textContent.cro.section_form.email}
@@ -80,7 +95,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700">
+              <label htmlFor="message" className="block">
                 {langName === "eng"
                   ? textContent.eng.section_form.text
                   : textContent.cro.section_form.text}
@@ -93,15 +108,32 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 required
               ></textarea>
             </div>
-
             <button
               type="submit"
-              className="bg-red-600 text-white w-full p-2 rounded-sm hover:bg-red-500"
+              className={`bg-red-600 text-white w-full p-2 rounded-sm hover:bg-red-500 ${
+                spinner ? "cursor-not-allowed opacity-50" : "hover:bg-red-500"
+              }`}
+              disabled={spinner}
             >
               {langName === "eng"
                 ? textContent.eng.section_form.btn
                 : textContent.cro.section_form.btn}
             </button>
+
+            {successfullMsg && (
+              <div className="flex items-center justify-center mt-3 font-bold">
+                <span className="text-green-500 mr-2">{successfullMsg}</span>
+                <IoIosCheckmarkCircleOutline
+                  className="text-green-500"
+                  size={25}
+                />
+              </div>
+            )}
+            {spinner && (
+              <div className="flex justify-center items-center mt-3">
+                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-purple-700"></div>
+              </div>
+            )}
           </form>
         </div>
 
