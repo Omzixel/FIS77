@@ -15,10 +15,6 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [spinner, setSpinner] = useState(false);
   const [successfullMsg, setSuccessfullMsg] = useState("");
 
-  const templateID = "dummyValue";
-  const serviceID = "dummyValue";
-  const userID = "dummyValue";
-
   const handleSubmit = (e: any) => {
     setSpinner(true);
     e.preventDefault();

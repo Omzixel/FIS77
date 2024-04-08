@@ -14,7 +14,7 @@ const Gallery: FC<IProps> = ({ className }) => {
     null
   );
 
-  const images = [`${img1}`, `${img2}`];
+  const images = [img1, img2];
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -33,7 +33,6 @@ const Gallery: FC<IProps> = ({ className }) => {
   const navigate = (direction: "prev" | "next") => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => {
-        if (prevIndex === null) return null;
         if (direction === "prev") {
           return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
         } else {
@@ -45,13 +44,13 @@ const Gallery: FC<IProps> = ({ className }) => {
 
   return (
     <div
-      className={`theme-${className}-text theme-${className}-main flex mx-auto gap-5 justify-center py-2 pb-96`}
+      className={`flex mx-auto gap-5 justify-center py-2 pb-96 ${className}`}
     >
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
-          className="w-1/4 cursor-pointer"
+          className="w-1/4 cursor-pointer hover:scale-105 transition duration-300 ease-out"
           alt={`Image ${index + 1}`}
           onClick={() => openModal(index)}
         />
@@ -60,14 +59,15 @@ const Gallery: FC<IProps> = ({ className }) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" // Tailwind classes for dark overlay
+        overlayClassName="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center"
         className="modal"
+        contentLabel="Gallery Modal"
       >
         {selectedImageIndex !== null && (
-          <div className="my-[10%] flex flex-col items-center relative">
+          <>
             <button
               onClick={closeModal}
-              className=" text-white bg-black bg-opacity-50 p-2 rounded-full"
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,22 +86,22 @@ const Gallery: FC<IProps> = ({ className }) => {
             </button>
             <button
               onClick={() => navigate("prev")}
-              className="text-white absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 rounded"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded"
             >
               Previous
             </button>
             <img
               src={images[selectedImageIndex]}
-              className="w-1/3"
+              className="max-h-screen max-w-screen mx-auto"
               alt={`Image ${selectedImageIndex + 1}`}
             />
             <button
               onClick={() => navigate("next")}
-              className="text-white absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 rounded"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded"
             >
               Next
             </button>
-          </div>
+          </>
         )}
       </Modal>
     </div>
