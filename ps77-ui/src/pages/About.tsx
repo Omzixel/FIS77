@@ -12,8 +12,7 @@ const About: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage:
-            'url("https://png.pngtree.com/background/20230512/original/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-picture-image_2503007.jpg")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/aboutBg.jpg")',
         }}
       >
         <div className="container mx-auto text-center">

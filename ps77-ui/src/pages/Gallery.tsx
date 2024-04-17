@@ -1,8 +1,15 @@
 import { FC, useState, useEffect } from "react";
 import Modal from "react-modal";
 
-import img1 from "../images/img1.jpg";
-import img2 from "../images/img2.jpg";
+import imgOne from "../images/imgGallery1.jpg";
+import imgTwo from "../images/imgGallery2.jpg";
+import imgThree from "../images/imgGallery3.jpg";
+import imgFour from "../images/imgGallery4.jpg";
+import imgFive from "../images/imgGallery5.jpg";
+import imgSix from "../images/imgGallery6.jpg";
+import imgSeven from "../images/imgGallery7.jpg";
+import imgEight from "../images/imgGallery8.jpg";
+import imgNine from "../images/imgGallery9.jpg";
 
 interface IProps {
   className: string;
@@ -14,7 +21,20 @@ const Gallery: FC<IProps> = ({ className }) => {
     null
   );
 
-  const images = [img1, img2];
+  const img3 = "https://anjix3.sirv.com/Images/galleryOne.jpg";
+  const img4 = "https://anjix3.sirv.com/Images/galleryTwo.jpg";
+
+  const images = [
+    imgOne,
+    imgTwo,
+    imgThree,
+    imgFour,
+    imgFive,
+    imgSix,
+    imgSeven,
+    imgEight,
+    imgNine,
+  ];
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -43,18 +63,19 @@ const Gallery: FC<IProps> = ({ className }) => {
   };
 
   return (
-    <div
-      className={`flex mx-auto gap-5 justify-center py-2 pb-96 ${className}`}
-    >
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          className="w-1/4 cursor-pointer hover:scale-105 transition duration-300 ease-out"
-          alt={`Image ${index + 1}`}
-          onClick={() => openModal(index)}
-        />
-      ))}
+    <div className={`mx-auto ${className}`}>
+      <div className="flex flex-wrap justify-center gap-5 py-2 pb-96">
+        {images.map((image, index) => (
+          <div key={index} className="w-1/4">
+            <img
+              src={image}
+              className="w-full cursor-pointer hover:scale-105 transition duration-300 ease-out"
+              alt={`Image ${index + 1}`}
+              onClick={() => openModal(index)}
+            />
+          </div>
+        ))}
+      </div>
 
       <Modal
         isOpen={modalIsOpen}

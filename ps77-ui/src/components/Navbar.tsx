@@ -5,6 +5,7 @@ import { TbSunHigh } from "react-icons/tb";
 import { IoMoonSharp } from "react-icons/io5";
 
 import logoImg from "../images/logo.jpg";
+import logoImgInvert from "../images/logoInvert.jpg";
 
 interface IProps {
   chooseTheme: (isLightTheme: boolean) => void;
@@ -42,9 +43,13 @@ const Navbar: FC<IProps> = ({
         <div className="max-w-7xl mx-auto">
           <div className="flex mx-auto justify-between w-5/6 ">
             {/* Primary menu and logo */}
-            <div className="flex items-center gap-16 my-12">
+            <div className="flex items-center gap-16 my-5">
               {/* logo */}
-              <img className="w-14 rounded-xl" src={logoImg} alt="" />
+              {className === "light" ? (
+                <img className="w-24 rounded-xl" src={logoImg} alt="" />
+              ) : (
+                <img className="w-24 rounded-xl" src={logoImg} alt="" />
+              )}
               <div>
                 <a
                   href="/"

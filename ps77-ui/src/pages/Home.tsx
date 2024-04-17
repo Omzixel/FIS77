@@ -9,9 +9,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { textContent } from "@/components/text components/Home_TC";
 
-import img1 from "../images/img1.jpg";
-import img2 from "../images/img2.jpg";
-import img3 from "../images/img3.jpg";
+import imgOne from "../images/imgCarousel1.jpg";
+import imgTwo from "../images/imgCarousel2.jpg";
+import imgThree from "../images/imgCarousel3.jpg";
+import imgFour from "../images/imgCarousel4.jpg";
 import photoIcon from "../images/photoIcon.svg";
 import videoIcon from "../images/videoIcon.svg";
 
@@ -26,7 +27,12 @@ const Home: FC<IProps> = ({ className, langName }) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageUrls = [`${img1}`, `${img2}`, `${img3}`];
+        const imageUrls = [
+          `${imgOne}`,
+          `${imgTwo}`,
+          `${imgThree}`,
+          `${imgFour}`,
+        ];
         setImages(imageUrls);
       } catch (error) {
         console.error("Error fetching images:", error);
@@ -45,8 +51,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage:
-            'url("https://cdn.mos.cms.futurecdn.net/gvQ9NhQP8wbbM32jXy4V3j.jpg")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/homeBg.jpg")',
         }}
       >
         <div className="container mx-auto text-center">
