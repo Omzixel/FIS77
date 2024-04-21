@@ -59,7 +59,10 @@ function App() {
           path="/products"
           element={<Products className={className} langName={langName} />}
         />
-        <Route path="/gallery" element={<Gallery className={className} />} />
+        <Route
+          path="/gallery"
+          element={<Gallery className={className} langName={langName} />}
+        />
         <Route
           path="/about"
           element={<About className={className} langName={langName} />}

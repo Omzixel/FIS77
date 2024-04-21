@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import Modal from "react-modal";
+import { textContent } from "@/components/text components/Gallery_TC";
 
 import imgOne from "../images/imgGallery1.jpg";
 import imgTwo from "../images/imgGallery2.jpg";
@@ -13,16 +14,14 @@ import imgNine from "../images/imgGallery9.jpg";
 
 interface IProps {
   className: string;
+  langName: string;
 }
 
-const Gallery: FC<IProps> = ({ className }) => {
+const Gallery: FC<IProps> = ({ className, langName }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
-
-  const img3 = "https://anjix3.sirv.com/Images/galleryOne.jpg";
-  const img4 = "https://anjix3.sirv.com/Images/galleryTwo.jpg";
 
   const images = [
     imgOne,
@@ -54,17 +53,17 @@ const Gallery: FC<IProps> = ({ className }) => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => {
         if (direction === "prev") {
-          return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
+          return prevIndex === 0 ? images.length - 1 : prevIndex! - 1;
         } else {
-          return prevIndex === images.length - 1 ? 0 : prevIndex + 1;
+          return prevIndex === images.length - 1 ? 0 : prevIndex! + 1;
         }
       });
     }
   };
 
   return (
-    <div className={`mx-auto ${className}`}>
-      <div className="flex flex-wrap justify-center gap-5 py-2 pb-96">
+    <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
+      <div className="flex flex-wrap justify-center gap-5 py-2 p-12">
         {images.map((image, index) => (
           <div key={index} className="w-1/4">
             <img
@@ -109,7 +108,9 @@ const Gallery: FC<IProps> = ({ className }) => {
               onClick={() => navigate("prev")}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded"
             >
-              Previous
+              {langName === "eng"
+                ? textContent.eng.btn_previous
+                : textContent.cro.btn_previous}
             </button>
             <img
               src={images[selectedImageIndex]}
@@ -120,7 +121,9 @@ const Gallery: FC<IProps> = ({ className }) => {
               onClick={() => navigate("next")}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded"
             >
-              Next
+              {langName === "eng"
+                ? textContent.eng.btn_next
+                : textContent.cro.btn_next}
             </button>
           </>
         )}
