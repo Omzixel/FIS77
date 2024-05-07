@@ -2,6 +2,7 @@ import { FC } from "react";
 import { textContent } from "@/components/text components/Footer_TC";
 import fbLogo from "../images/fbLogo.svg";
 import ytLogo from "../images/ytLogo.svg";
+import igLogo from "../images/igLogo.svg";
 
 interface IProps {
   langName: string;
@@ -37,7 +38,7 @@ const Footer: FC<IProps> = ({ langName }) => {
           </p>
           <div className="flex space-x-4 mt-1">
             <a
-              href="https://www.facebook.com/profile.php?id=61553018457674"
+              href="https://www.facebook.com/fotostudioivan77/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,7 +48,17 @@ const Footer: FC<IProps> = ({ langName }) => {
               />
             </a>
             <a
-              href="https://www.youtube.com/@ivanbilandzicfotostudioiva3543"
+              href="https://www.instagram.com/foto_studio_ivan_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-7 hover:scale-110 transition ease-out"
+                src={igLogo}
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCSHL75T2yClooloeAyzZXiw"
               target="_blank"
               rel="noopener noreferrer"
             >
