@@ -22,7 +22,7 @@ git clone https://gitlab.com/your-username/foto-ivan-studio-77.git
 To start the application in the project root type this commands
 
 ```bash
-cd ps-77-ui
+cd fis77-ui
 npm install
 npm run dev
 ```
