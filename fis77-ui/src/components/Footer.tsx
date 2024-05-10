@@ -28,13 +28,18 @@ const Footer: FC<IProps> = ({ langName }) => {
               ? textContent.eng.third_element
               : textContent.cro.third_element}
           </p>
+          <p>
+            {langName === "eng"
+              ? textContent.eng.fourth_element
+              : textContent.cro.fourth_element}
+          </p>
         </div>
 
         <div className="mt-4 md:mt-0">
           <p className="">
             {langName === "eng"
-              ? textContent.eng.fourth_element
-              : textContent.cro.fourth_element}
+              ? textContent.eng.fifth_element
+              : textContent.cro.fifth_element}
           </p>
           <div className="flex space-x-4 mt-1">
             <a
