@@ -11,13 +11,7 @@ Foto Ivan Studio 77 is a premier photo studio specializing in capturing memorabl
 - **Services**: Learn about the services we offer and the packages available for different types of events.
 - **Contact**: Get in touch with us for inquiries, bookings, or collaborations.
 
-## Getting Started
-
-To get started with our project, simply clone this repository to your local machine:
-
-```bash
-git clone https://gitlab.com/your-username/foto-ivan-studio-77.git
-```
+## Local development
 
 To start the application in the project root type this commands
 
@@ -25,4 +19,13 @@ To start the application in the project root type this commands
 cd fis77-ui
 npm install
 npm run dev
+```
+
+## Local deployment + docker
+
+```bash
+cd fis77-ui
+npm install
+npm run build
+docker build -t fis77-ui .
 ```

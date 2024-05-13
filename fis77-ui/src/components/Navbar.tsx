@@ -48,7 +48,7 @@ const Navbar: FC<IProps> = ({
               {className === "light" ? (
                 <img className="w-24 rounded-xl" src={logoImg} alt="" />
               ) : (
-                <img className="w-24 rounded-xl" src={logoImg} alt="" />
+                <img className="w-24 rounded-xl" src={logoImgInvert} alt="" />
               )}
               <div>
                 <a

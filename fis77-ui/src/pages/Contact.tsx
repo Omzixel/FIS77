@@ -28,6 +28,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
     emailjs
       .send(serviceID, templateID, templateParams, userID)
       .then((response: any) => {
+        console.log("Request made successfully " + response);
         setSpinner(false);
         setSuccessfullMsg("Your message was sent successfully");
         setTimeout(() => {
@@ -38,6 +39,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
         setMessage("");
       })
       .catch((error: any) => {
+        console.log("Error during request:  " + error);
         setSpinner(false);
       });
   };
