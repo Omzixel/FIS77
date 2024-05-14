@@ -63,6 +63,16 @@ const Footer: FC<IProps> = ({ langName }) => {
               />
             </a>
             <a
+              href="https://www.instagram.com/booth360event/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-7 hover:scale-110 transition ease-out"
+                src={igLogo}
+              />
+            </a>
+            <a
               href="https://www.youtube.com/channel/UCSHL75T2yClooloeAyzZXiw"
               target="_blank"
               rel="noopener noreferrer"

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { textContent } from "@/components/text components/Navbar_TC";
 import { TbSunHigh } from "react-icons/tb";
 import { IoMoonSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 import logoImg from "../images/logo.jpg";
 import logoImgInvert from "../images/logoInvert.jpg";
@@ -32,9 +33,14 @@ const Navbar: FC<IProps> = ({
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLinkClick = () => {
     setToggleMenu(false);
+  };
+
+  const goToHomePage = () => {
+    navigate("/");
   };
 
   return (
@@ -46,9 +52,19 @@ const Navbar: FC<IProps> = ({
             <div className="flex items-center gap-16 my-5">
               {/* logo */}
               {className === "light" ? (
-                <img className="w-24 rounded-xl" src={logoImg} alt="" />
+                <img
+                  onClick={goToHomePage}
+                  className="w-24 rounded-xl"
+                  src={logoImg}
+                  alt=""
+                />
               ) : (
-                <img className="w-24 rounded-xl" src={logoImgInvert} alt="" />
+                <img
+                  onClick={goToHomePage}
+                  className="w-24 rounded-xl"
+                  src={logoImgInvert}
+                  alt=""
+                />
               )}
               <div>
                 <a
