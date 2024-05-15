@@ -25,6 +25,10 @@ const Contact: FC<IProps> = ({ className, langName }) => {
       message,
     };
 
+    const templateID = import.meta.env.VITE_TEMPLATE_ID;
+    const serviceID = import.meta.env.VITE_SERVICE_ID;
+    const userID = import.meta.env.VITE_USER_ID;
+
     emailjs
       .send(serviceID, templateID, templateParams, userID)
       .then((response: any) => {

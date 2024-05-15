@@ -11,6 +11,16 @@ Foto Ivan Studio 77 is a premier photo studio specializing in capturing memorabl
 - **Services**: Learn about the services we offer and the packages available for different types of events.
 - **Contact**: Get in touch with us for inquiries, bookings, or collaborations.
 
+## Necessary environment variables:
+
+To send an email, the app utilizes EmailJS. Here are the values you get from EmailJS so you can send an email.
+
+```bash
+VITE_TEMPLATE_ID=
+VITE_SERVICE_ID=
+VITE_USER_ID=
+```
+
 ## Local development
 
 To start the application in the project root type this commands
