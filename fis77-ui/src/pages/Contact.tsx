@@ -53,8 +53,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage:
-            'url("https://anjix3.sirv.com/Images/contactBg.jpg")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/contact.jpg")',
         }}
       ></section>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">

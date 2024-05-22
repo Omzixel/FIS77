@@ -74,8 +74,7 @@ const Products: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage:
-            'url("https://anjix3.sirv.com/Images/productsBg.jpg")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/products.jpg")',
         }}
       ></section>
       <h1 className={`w-1/2 mx-auto text-center font-semibold text-xl my-5`}>

@@ -12,7 +12,7 @@ const About: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage: 'url("https://anjix3.sirv.com/Images/aboutBg.jpg")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/about.jpg")',
         }}
       >
         <div className="container mx-auto text-center">
@@ -25,8 +25,8 @@ const About: FC<IProps> = ({ className, langName }) => {
         <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
           <img
             className="rounded-lg w-full"
-            src="https://static.showit.co/800/fJYakwDdRxab52BqxsYEvw/57329/wedding_photographer_bristol_-_gavin_jacob_power.jpg"
-            alt="413979415-856362963159825-8024410639689083445-n"
+            src="https://anjix3.sirv.com/Images/aboutMain.jpg"
+            alt="Dope image"
           />
         </div>
         <div className="w-full md:w-1/2 pl-0 md:pl-8">
