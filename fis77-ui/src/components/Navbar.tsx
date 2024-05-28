@@ -1,9 +1,9 @@
 import { useState, FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { textContent } from "@/components/text components/Navbar_TC";
-import { TbSunHigh } from "react-icons/tb";
-import { IoMoonSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 import logoImg from "../images/logo.jpg";
 import logoImgInvert from "../images/logoInvert.jpg";
@@ -192,27 +192,16 @@ const Navbar: FC<IProps> = ({
                   id="toggleMode"
                   className="relative inline-flex items-center cursor-pointer ml-2"
                 >
-                  {isLightTheme ? (
-                    <TbSunHigh
-                      className="text-yellow-500 hover:text-yellow-600 hover:scale-105 transition duration-300 ease-in-out"
-                      size={25}
-                      onClick={() => {
-                        localStorage.setItem("theme", JSON.stringify(false));
-                        chooseTheme(false);
-                        setCssTheme("dark");
-                      }}
-                    />
-                  ) : (
-                    <IoMoonSharp
-                      size={25}
-                      className="hover:text-blue-400 hover:scale-105 transition duration-300 ease-in-out"
-                      onClick={() => {
-                        localStorage.setItem("theme", JSON.stringify(true));
-                        chooseTheme(true);
-                        setCssTheme("light");
-                      }}
-                    />
-                  )}
+                  <DarkModeSwitch
+                    id={"toggleMode"}
+                    checked={!isLightTheme}
+                    onChange={(e) => {
+                      localStorage.setItem("theme", `"${!isLightTheme}"`);
+                      chooseTheme(!isLightTheme);
+                      setCssTheme(!isLightTheme ? "light" : "dark");
+                    }}
+                    size={30}
+                  />
                 </label>
               </div>
             </div>
