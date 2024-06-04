@@ -1,6 +1,7 @@
 import { useState, FC } from "react";
 import { textContent } from "@/components/text components/Contact_TC";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
 interface IProps {
@@ -15,7 +16,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [spinner, setSpinner] = useState(false);
   const [successfullMsg, setSuccessfullMsg] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     setSpinner(true);
     e.preventDefault();
 
@@ -31,8 +32,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
 
     emailjs
       .send(serviceID, templateID, templateParams, userID)
-      .then((response: any) => {
-        console.log("Request made successfully " + response);
+      .then(() => {
         setSpinner(false);
         setSuccessfullMsg("Your message was sent successfully");
         setTimeout(() => {
@@ -42,8 +42,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
         setEmail("");
         setMessage("");
       })
-      .catch((error: any) => {
-        console.log("Error during request:  " + error);
+      .catch(() => {
         setSpinner(false);
       });
   };

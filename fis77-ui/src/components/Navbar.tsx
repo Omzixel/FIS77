@@ -195,7 +195,7 @@ const Navbar: FC<IProps> = ({
                   <DarkModeSwitch
                     id={"toggleMode"}
                     checked={!isLightTheme}
-                    onChange={(e) => {
+                    onChange={() => {
                       localStorage.setItem("theme", `"${!isLightTheme}"`);
                       chooseTheme(!isLightTheme);
                       setCssTheme(!isLightTheme ? "light" : "dark");
