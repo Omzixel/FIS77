@@ -46,40 +46,48 @@ const Footer: FC<IProps> = ({ langName }) => {
               href="https://www.facebook.com/fotostudioivan77/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook link"
             >
               <img
                 className="w-7 hover:scale-110 transition ease-out"
                 src={fbLogo}
+                alt="Facebook icon"
               />
             </a>
             <a
               href="https://www.instagram.com/foto_studio_ivan_/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram link"
             >
               <img
                 className="w-7 hover:scale-110 transition ease-out"
                 src={igLogo}
+                alt="Instagram icon"
               />
             </a>
             <a
               href="https://www.instagram.com/booth360event/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Second Instagram link"
             >
               <img
                 className="w-7 hover:scale-110 transition ease-out"
                 src={igLogo}
+                alt="Second Instagram icon"
               />
             </a>
             <a
               href="https://www.youtube.com/channel/UCSHL75T2yClooloeAyzZXiw"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Youtube link"
             >
               <img
                 className="w-8 hover:scale-110 transition ease-out"
                 src={ytLogo}
+                alt="Youtube icon"
               />
             </a>
           </div>

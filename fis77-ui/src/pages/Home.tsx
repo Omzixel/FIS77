@@ -90,7 +90,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
           <h3 className="text-2xl font-semibold mb-4 flex">
-            <img className="w-10 mr-3" src={photoIcon} />
+            <img className="w-10 mr-3" src={photoIcon} alt="Photo icon" />
             {langName === "eng"
               ? textContent.eng.section2.title
               : textContent.cro.section2.title}
@@ -147,7 +147,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
           <h3 className="text-2xl font-semibold mb-4 flex">
-            <img className="w-8 mr-3" src={videoIcon} />
+            <img className="w-8 mr-3" src={videoIcon} alt="Video icon" />
             {langName === "eng"
               ? textContent.eng.section3.title
               : textContent.cro.section3.title}
