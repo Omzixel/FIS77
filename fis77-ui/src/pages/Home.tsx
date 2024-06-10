@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { textContent } from "@/components/text components/Home_TC";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { textContent } from "@/components/text components/Home_TC";
+import React, { FC, useEffect, useState } from "react";
 
 import imgOne from "../images/imgCarousel1.jpg";
 import imgTwo from "../images/imgCarousel2.jpg";

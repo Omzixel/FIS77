@@ -1,5 +1,5 @@
-import { FC } from "react";
 import { textContent } from "@/components/text components/About_TC";
+import { FC } from "react";
 
 interface IProps {
   className: string;

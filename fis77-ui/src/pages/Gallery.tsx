@@ -1,6 +1,6 @@
-import { FC, useState, useEffect } from "react";
-import Modal from "react-modal";
 import { textContent } from "@/components/text components/Gallery_TC";
+import { FC, useEffect, useState } from "react";
+import Modal from "react-modal";
 
 import imgOne from "../images/imgGallery1.jpg";
 import imgTwo from "../images/imgGallery2.jpg";

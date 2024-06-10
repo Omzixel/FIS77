@@ -1,8 +1,7 @@
-import { useState, FC } from "react";
 import { textContent } from "@/components/text components/Contact_TC";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
+import { FC, FormEvent, useState } from "react";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 interface IProps {
   className: string;
@@ -79,8 +78,9 @@ const Contact: FC<IProps> = ({ className, langName }) => {
           </p>
           <br />
           <p className="font-bold">Ivankovo</p>
-          <div className="map-container border border-gray-300">
+          <div className="map-container border border-gray-300 rounded-sm">
             <iframe
+              title="Ivankovo location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.181713586857!2d18.675519076622386!3d45.28454964540689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cf5f23980f7c9%3A0xb85fac8a9e7b813!2sGorjani%2081%2C%2032281%2C%20Ivankovo!5e0!3m2!1sen!2shr!4v1711467646995!5m2!1sen!2shr"
               width="100%"
               height="300"
@@ -89,8 +89,9 @@ const Contact: FC<IProps> = ({ className, langName }) => {
           </div>
           <br />
           <p className="font-bold">Zagreb</p>
-          <div className="map-container border border-gray-300">
+          <div className="map-container border border-gray-300 rounded-sm">
             <iframe
+              title="Zagreb location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.201861984417!2d15.898022276644411!3d45.80721551048621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d11567facb51%3A0x5d647405c763b360!2sUl.%20Janka%20Matka%202%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1716305654094!5m2!1shr!2shr"
               width="100%"
               height="300"
@@ -115,7 +116,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-2 rounded-sm"
                 required
               />
             </div>
@@ -131,7 +132,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-2 rounded-sm"
                 required
               />
             </div>
@@ -146,7 +147,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-2 rounded-sm"
                 required
               ></textarea>
             </div>

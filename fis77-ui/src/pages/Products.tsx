@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { textContent } from "@/components/text components/Products_TC";
 import {
   Table,
   TableBody,
@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { textContent } from "@/components/text components/Products_TC";
+import { FC } from "react";
 
 const photos = [
   {

@@ -1,7 +1,6 @@
-import { useState, FC } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { textContent } from "@/components/text components/Navbar_TC";
-import { useNavigate } from "react-router-dom";
+import { FC, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
@@ -67,10 +66,7 @@ const Navbar: FC<IProps> = ({
                 />
               )}
               <div>
-                <a
-                  href="/"
-                  className="flex gap-1 font-bold text-gray-700 items-center "
-                ></a>
+                <a className="flex gap-1 font-bold text-gray-700 items-center "></a>
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8 ">
