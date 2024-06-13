@@ -99,8 +99,8 @@ const Products: FC<IProps> = ({ className, langName }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {photos.map((photo, index) => (
-            <TableRow key={index}>
+          {photos.map((photo) => (
+            <TableRow key={photo.photoName.eng}>
               <TableCell className="font-medium">
                 {langName === "eng" ? photo.photoName.eng : photo.photoName.hrv}
               </TableCell>
@@ -131,8 +131,8 @@ const Products: FC<IProps> = ({ className, langName }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {papers.map((paper, index) => (
-            <TableRow key={index}>
+          {papers.map((paper) => (
+            <TableRow key={paper.paperName}>
               <TableCell className="font-medium">{paper.paperName}</TableCell>
               <TableCell className="text-right">{paper.paperPrice}</TableCell>
             </TableRow>

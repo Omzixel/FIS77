@@ -90,7 +90,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
           <h3 className="text-2xl font-semibold mb-4 flex">
-            <img className="w-10 mr-3" src={photoIcon} alt="Photo icon" />
+            <img className="w-10 mr-3" src={photoIcon} alt="Frame pic icon" />
             {langName === "eng"
               ? textContent.eng.section2.title
               : textContent.cro.section2.title}
@@ -130,10 +130,10 @@ const Home: FC<IProps> = ({ className, langName }) => {
           <Carousel plugins={[plugin.current]}>
             <CarouselContent>
               {images.map((imageUrl, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={imageUrl}>
                   <img
                     src={imageUrl}
-                    alt={`Image ${index}`}
+                    alt={`${index}`}
                     className="w-full h-auto"
                   />
                 </CarouselItem>

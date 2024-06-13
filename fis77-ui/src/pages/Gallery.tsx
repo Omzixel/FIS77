@@ -64,13 +64,13 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
       <div className="flex flex-wrap justify-center gap-5 py-2 p-12">
-        {images.map((image, index) => (
-          <div key={index} className="w-1/4">
+        {images.map((image) => (
+          <div key={image} className="w-1/4">
             <img
               src={image}
               className="w-full cursor-pointer hover:scale-105 transition duration-300 ease-out"
-              alt={`Image ${index + 1}`}
-              onClick={() => openModal(index)}
+              alt={image}
+              onClick={() => openModal(images.indexOf(image))}
             />
           </div>
         ))}
@@ -115,7 +115,7 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
             <img
               src={images[selectedImageIndex]}
               className="max-h-screen max-w-screen mx-auto"
-              alt={`Image ${selectedImageIndex + 1}`}
+              alt={`${selectedImageIndex + 1}`}
             />
             <button
               onClick={() => navigate("next")}

@@ -26,7 +26,7 @@ const About: FC<IProps> = ({ className, langName }) => {
           <img
             className="rounded-lg w-full"
             src="https://anjix3.sirv.com/Images/aboutMain.jpg"
-            alt="Dope image"
+            alt="Couple near lake"
           />
         </div>
         <div className="w-full md:w-1/2 pl-0 md:pl-8">
