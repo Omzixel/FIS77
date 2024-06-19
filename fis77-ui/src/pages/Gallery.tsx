@@ -23,7 +23,7 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     null
   );
 
-  const images = [
+  const localImages = [
     imgOne,
     imgTwo,
     imgThree,
@@ -34,6 +34,13 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     imgEight,
     imgNine,
   ];
+
+  const urlImages = [
+    "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+    "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
+  ];
+
+  const allImages = [...localImages, ...urlImages];
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -53,9 +60,9 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => {
         if (direction === "prev") {
-          return prevIndex === 0 ? images.length - 1 : prevIndex! - 1;
+          return prevIndex === 0 ? allImages.length - 1 : prevIndex! - 1;
         } else {
-          return prevIndex === images.length - 1 ? 0 : prevIndex! + 1;
+          return prevIndex === allImages.length - 1 ? 0 : prevIndex! + 1;
         }
       });
     }
@@ -64,13 +71,13 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
       <div className="flex flex-wrap justify-center gap-5 py-2 p-12">
-        {images.map((image) => (
+        {allImages.map((image, index) => (
           <div key={image} className="w-1/4">
             <img
               src={image}
               className="w-full cursor-pointer hover:scale-105 transition duration-300 ease-out"
               alt={image}
-              onClick={() => openModal(images.indexOf(image))}
+              onClick={() => openModal(index)}
             />
           </div>
         ))}
@@ -113,7 +120,7 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.btn_previous}
             </button>
             <img
-              src={images[selectedImageIndex]}
+              src={allImages[selectedImageIndex]}
               className="max-h-screen max-w-screen mx-auto"
               alt={`${selectedImageIndex + 1}`}
             />
