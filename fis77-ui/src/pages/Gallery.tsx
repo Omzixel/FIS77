@@ -36,8 +36,15 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   ];
 
   const urlImages = [
-    "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
-    "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
+    "https://anjix3.sirv.com/Images/cloudImg1.jpg",
+    "https://anjix3.sirv.com/Images/cloudImg2.jpg",
+    "https://anjix3.sirv.com/Images/cloudImg3.jpg",
+    "https://anjix3.sirv.com/Images/cloudImg4.jpg",
+    "https://anjix3.sirv.com/Images/cloudImg5.JPG",
+    "https://anjix3.sirv.com/Images/cloudImg6.JPG",
+    "https://anjix3.sirv.com/Images/cloudImg7.JPG",
+    "https://anjix3.sirv.com/Images/cloudImg8.jpg",
+    "https://anjix3.sirv.com/Images/cloudImg9.jpg",
   ];
 
   const allImages = [...localImages, ...urlImages];
