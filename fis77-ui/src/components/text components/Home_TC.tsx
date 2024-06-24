@@ -49,7 +49,7 @@ export const textContent: { [key: string]: Home_TC } = {
       title: "Videografija",
       subTitle1: "Komercijalni videozapis: ",
       subTitle2: "Događaji: ",
-      subTitle3: "Glazebni videozapisi: ",
+      subTitle3: "Glazbeni videozapisi: ",
       text_commercial:
         "Oblikovanje dinamičnih videozapisa koji jedinstveno i privlačno predstavljaju vaš brand.",
       text_events:

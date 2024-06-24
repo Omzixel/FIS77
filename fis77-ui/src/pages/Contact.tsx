@@ -116,7 +116,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border p-2 rounded-sm"
+                className="w-full border p-2 rounded-sm text-black"
                 required
               />
             </div>
@@ -132,7 +132,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border p-2 rounded-sm"
+                className="w-full border p-2 rounded-sm text-black"
                 required
               />
             </div>
@@ -147,7 +147,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border p-2 rounded-sm"
+                className="w-full border p-2 rounded-sm text-black"
                 required
               ></textarea>
             </div>
