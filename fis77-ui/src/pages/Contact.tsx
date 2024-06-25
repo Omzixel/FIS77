@@ -1,7 +1,10 @@
 import { textContent } from "@/components/text components/Contact_TC";
 import emailjs from "@emailjs/browser";
 import { FC, FormEvent, useState } from "react";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import {
+  IoIosCheckmarkCircleOutline,
+  IoIosCloseCircleOutline,
+} from "react-icons/io";
 
 interface IProps {
   className: string;
@@ -14,6 +17,22 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [message, setMessage] = useState("");
   const [spinner, setSpinner] = useState(false);
   const [successfullMsg, setSuccessfullMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const updateErrorMessage = () => {
+    const errMsg =
+      langName === "eng" ? textContent.eng.errorMsg : textContent.cro.errorMsg;
+
+    setErrorMsg(errMsg);
+  };
+
+  const updateSuccessfullMessage = () => {
+    const succMsg =
+      langName === "eng"
+        ? textContent.eng.successfullMsg
+        : textContent.cro.successfullMsg;
+    setSuccessfullMsg(succMsg);
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     setSpinner(true);
@@ -33,7 +52,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
       .send(serviceID, templateID, templateParams, userID)
       .then(() => {
         setSpinner(false);
-        setSuccessfullMsg("Your message was sent successfully");
+        updateSuccessfullMessage();
         setTimeout(() => {
           setSuccessfullMsg("");
         }, 4000);
@@ -42,6 +61,10 @@ const Contact: FC<IProps> = ({ className, langName }) => {
         setMessage("");
       })
       .catch(() => {
+        updateErrorMessage();
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 4000);
         setSpinner(false);
       });
   };
@@ -164,11 +187,20 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             </button>
 
             {successfullMsg && (
-              <div className="flex items-center justify-center mt-3 font-bold">
+              <div className="items-center justify-center mt-3 font-bold px-5 text-center">
                 <span className="text-green-500 mr-2">{successfullMsg}</span>
                 <IoIosCheckmarkCircleOutline
-                  className="text-green-500"
-                  size={25}
+                  className="text-green-500 mx-auto"
+                  size={30}
+                />
+              </div>
+            )}
+            {errorMsg && (
+              <div className="items-center justify-center mt-3 font-bold px-5 text-center">
+                <span className="text-red-500">{errorMsg}</span>
+                <IoIosCloseCircleOutline
+                  className="text-red-500 mx-auto"
+                  size={30}
                 />
               </div>
             )}
