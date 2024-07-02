@@ -1,6 +1,6 @@
 import { textContent } from "@/components/text components/Contact_TC";
 import emailjs from "@emailjs/browser";
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useState, useEffect } from "react";
 import {
   IoIosCheckmarkCircleOutline,
   IoIosCloseCircleOutline,
@@ -18,11 +18,12 @@ const Contact: FC<IProps> = ({ className, langName }) => {
   const [spinner, setSpinner] = useState(false);
   const [successfullMsg, setSuccessfullMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [cooldown, setCooldown] = useState(false);
+  const [cooldownTimer, setCooldownTimer] = useState(0);
 
   const updateErrorMessage = () => {
     const errMsg =
       langName === "eng" ? textContent.eng.errorMsg : textContent.cro.errorMsg;
-
     setErrorMsg(errMsg);
   };
 
@@ -33,6 +34,36 @@ const Contact: FC<IProps> = ({ className, langName }) => {
         : textContent.cro.successfullMsg;
     setSuccessfullMsg(succMsg);
   };
+
+  useEffect(() => {
+    const savedCooldown = localStorage.getItem("cooldown");
+    const savedCooldownTime = localStorage.getItem("cooldownTime");
+
+    if (savedCooldown && savedCooldownTime) {
+      const remainingTime = parseInt(savedCooldownTime, 10) - Date.now();
+      if (remainingTime > 0) {
+        setCooldown(true);
+        setCooldownTimer(Math.floor(remainingTime / 1000));
+      } else {
+        localStorage.removeItem("cooldown");
+        localStorage.removeItem("cooldownTime");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (cooldownTimer > 0) {
+      timer = setTimeout(() => {
+        setCooldownTimer(cooldownTimer - 1);
+      }, 1000);
+    } else if (cooldownTimer === 0 && cooldown) {
+      setCooldown(false);
+      localStorage.removeItem("cooldown");
+      localStorage.removeItem("cooldownTime");
+    }
+    return () => clearTimeout(timer);
+  }, [cooldownTimer, cooldown]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     setSpinner(true);
@@ -53,6 +84,11 @@ const Contact: FC<IProps> = ({ className, langName }) => {
       .then(() => {
         setSpinner(false);
         updateSuccessfullMessage();
+        setCooldown(true);
+        const cooldownTime = Date.now() + 10000;
+        localStorage.setItem("cooldown", "true");
+        localStorage.setItem("cooldownTime", cooldownTime.toString());
+        setCooldownTimer(60);
         setTimeout(() => {
           setSuccessfullMsg("");
         }, 4000);
@@ -176,12 +212,18 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             </div>
             <button
               type="submit"
-              className={`bg-red-600 text-white w-full p-2 rounded-sm hover:bg-red-500 ${
-                spinner ? "cursor-not-allowed opacity-50" : "hover:bg-red-500"
+              className={`bg-red-600 text-white w-full p-2 rounded-sm ${
+                spinner || cooldown
+                  ? "cursor-not-allowed opacity-50"
+                  : "hover:bg-red-500"
               }`}
-              disabled={spinner}
+              disabled={spinner || cooldown}
             >
-              {langName === "eng"
+              {cooldown
+                ? langName === "eng"
+                  ? `${cooldownTimer} ${textContent.eng.timeRemaining}`
+                  : `${cooldownTimer} ${textContent.cro.timeRemaining}`
+                : langName === "eng"
                 ? textContent.eng.section_form.btn
                 : textContent.cro.section_form.btn}
             </button>

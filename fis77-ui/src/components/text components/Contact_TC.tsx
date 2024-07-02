@@ -2,6 +2,7 @@ interface Footer_TC {
   title: string;
   successfullMsg: string;
   errorMsg: string;
+  timeRemaining: string;
   section_form: {
     name: string;
     email: string;
@@ -22,6 +23,7 @@ export const textContent: { [key: string]: Footer_TC } = {
     successfullMsg: "Vaša poruka je uspješno poslana.",
     errorMsg:
       "Ups! Trenutno ne možemo poslati vaš email. Molimo pokušajte ponovno kasnije.",
+    timeRemaining: "sekundi preostalo",
     section_form: {
       name: "Vaše Ime i Prezime:",
       email: "Vaša e-mail adresa:",
@@ -40,6 +42,7 @@ export const textContent: { [key: string]: Footer_TC } = {
     successfullMsg: "Your message was sent successfully",
     errorMsg:
       "Oops! We couldn't send your email right now. Please try again later.",
+    timeRemaining: "seconds remaining",
     section_form: {
       name: "Your Name and Surname:",
       email: "Your Email Address:",
