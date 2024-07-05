@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import React, { FC, useEffect, useState } from "react";
+import { BsArrowUpSquareFill } from "react-icons/bs";
 
 import imgOne from "../images/imgCarousel1.jpg";
 import imgTwo from "../images/imgCarousel2.jpg";
@@ -23,6 +24,7 @@ interface IProps {
 
 const Home: FC<IProps> = ({ className, langName }) => {
   const [images, setImages] = useState<string[]>([]);
+  const [showScroll, setShowScroll] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -40,7 +42,22 @@ const Home: FC<IProps> = ({ className, langName }) => {
     };
 
     fetchImages();
+
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScroll(true);
+      } else {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
@@ -186,6 +203,15 @@ const Home: FC<IProps> = ({ className, langName }) => {
           </ul>
         </div>
       </div>
+      {showScroll && (
+        <BsArrowUpSquareFill
+          onClick={scrollToTop}
+          className={`fixed bottom-8 right-8 rounded-md duration-300 cursor-pointer ${
+            className === "light" ? "border bg-white" : ""
+          }`}
+          size={35}
+        />
+      )}
     </div>
   );
 };
