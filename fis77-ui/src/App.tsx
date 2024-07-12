@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+
 function App() {
   const [isLightTheme, setIsLightTheme] = useState<boolean>(
     /true/.test(String(localStorage.getItem("theme")))
@@ -73,6 +75,7 @@ function App() {
         />
       </Routes>
 
+      <ScrollToTopButton className={className} />
       <Footer langName={langName} />
     </>
   );

@@ -15,7 +15,6 @@ import imgThree from "../images/imgCarousel3.jpg";
 import imgFour from "../images/imgCarousel4.jpg";
 import photoIcon from "../images/photoIcon.svg";
 import videoIcon from "../images/videoIcon.svg";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 interface IProps {
   className: string;
@@ -187,7 +186,6 @@ const Home: FC<IProps> = ({ className, langName }) => {
           </ul>
         </div>
       </div>
-      <ScrollToTopButton className={className} />
     </div>
   );
 };
