@@ -1,9 +1,9 @@
-interface Footer_TC {
+interface GalleryTC {
   btn_next: string;
   btn_previous: string;
 }
 
-export const textContent: { [key: string]: Footer_TC } = {
+export const textContent: { [key: string]: GalleryTC } = {
   cro: {
     btn_next: "Sljedeća",
     btn_previous: "Prethodna",

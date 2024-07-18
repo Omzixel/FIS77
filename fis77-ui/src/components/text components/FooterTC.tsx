@@ -1,4 +1,4 @@
-interface Footer_TC {
+interface FooterTC {
   first_element: string;
   second_element: string;
   third_element: string;
@@ -6,7 +6,7 @@ interface Footer_TC {
   fifth_element: string;
 }
 
-export const textContent: { [key: string]: Footer_TC } = {
+export const textContent: { [key: string]: FooterTC } = {
   cro: {
     first_element: "Ul. Gorjani 81, 32280, Ivankovo",
     second_element: "Ul. Janka Matka 2, 10000, Zagreb",

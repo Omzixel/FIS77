@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/Products_TC";
+import { textContent } from "@/components/text components/ProductsTC";
 import {
   Table,
   TableBody,

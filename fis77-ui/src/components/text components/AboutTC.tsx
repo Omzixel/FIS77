@@ -1,4 +1,4 @@
-interface Footer_TC {
+interface AboutTC {
   title: string;
   section1: string;
   section2: string;
@@ -7,7 +7,7 @@ interface Footer_TC {
   section5: string;
 }
 
-export const textContent: { [key: string]: Footer_TC } = {
+export const textContent: { [key: string]: AboutTC } = {
   cro: {
     title: "O nama",
     section1:

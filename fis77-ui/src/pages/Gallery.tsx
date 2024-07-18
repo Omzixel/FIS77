@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/Gallery_TC";
+import { textContent } from "@/components/text components/GalleryTC";
 import { FC, useEffect, useState } from "react";
 import Modal from "react-modal";
 

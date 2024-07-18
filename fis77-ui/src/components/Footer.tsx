@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { textContent } from "@/components/text components/Footer_TC";
+import { textContent } from "@/components/text components/FooterTC";
 import fbLogo from "../images/fbLogo.svg";
 import ytLogo from "../images/ytLogo.svg";
 import igLogo from "../images/igLogo.svg";

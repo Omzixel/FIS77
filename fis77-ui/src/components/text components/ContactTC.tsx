@@ -1,4 +1,4 @@
-interface Footer_TC {
+interface ContactTC {
   title: string;
   successfullMsg: string;
   errorMsg: string;
@@ -17,7 +17,7 @@ interface Footer_TC {
   };
 }
 
-export const textContent: { [key: string]: Footer_TC } = {
+export const textContent: { [key: string]: ContactTC } = {
   cro: {
     title: "Kontaktriaj nas",
     successfullMsg: "Vaša poruka je uspješno poslana.",

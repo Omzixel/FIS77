@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/Home_TC";
+import { textContent } from "@/components/text components/HomeTC";
 import {
   Carousel,
   CarouselContent,

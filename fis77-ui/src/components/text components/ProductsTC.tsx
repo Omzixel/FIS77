@@ -1,4 +1,4 @@
-interface Products_TC {
+interface ProductsTC {
   main_title: string;
   product: {
     product_name: string;
@@ -7,7 +7,7 @@ interface Products_TC {
   };
 }
 
-export const textContent: { [key: string]: Products_TC } = {
+export const textContent: { [key: string]: ProductsTC } = {
   cro: {
     main_title: "IZRADA FOTOGRAFIJE",
     product: {

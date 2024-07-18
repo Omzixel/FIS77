@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/Contact_TC";
+import { textContent } from "@/components/text components/ContactTC";
 import emailjs from "@emailjs/browser";
 import { FC, FormEvent, useState, useEffect } from "react";
 import {

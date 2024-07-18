@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/Navbar_TC";
+import { textContent } from "@/components/text components/NavbarTC";
 import { FC, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 

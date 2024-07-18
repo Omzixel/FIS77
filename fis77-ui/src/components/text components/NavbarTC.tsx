@@ -1,4 +1,4 @@
-interface Navbar_TC {
+interface NavbarTC {
   first_route: string;
   second_route: string;
   third_route: string;
@@ -6,7 +6,7 @@ interface Navbar_TC {
   fifth_route: string;
 }
 
-export const textContent: { [key: string]: Navbar_TC } = {
+export const textContent: { [key: string]: NavbarTC } = {
   cro: {
     first_route: "POČETNA",
     second_route: "PROIZVODI",

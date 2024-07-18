@@ -1,4 +1,4 @@
-interface Home_TC {
+interface HomeTC {
   bg_main_text: string;
   bg_img_text: string;
   section1: {
@@ -25,7 +25,7 @@ interface Home_TC {
   };
 }
 
-export const textContent: { [key: string]: Home_TC } = {
+export const textContent: { [key: string]: HomeTC } = {
   cro: {
     bg_main_text: "Dobrodošli u Foto Ivan Studio 77",
     bg_img_text: "Uzbuđenje trenutka, snaga emocija i beskonačna kreativnost",
