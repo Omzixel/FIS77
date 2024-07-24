@@ -7,6 +7,7 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import NotFound from "./pages/NotFound";
 
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
@@ -73,6 +74,7 @@ function App() {
           path="/contact"
           element={<Contact className={className} langName={langName} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <ScrollToTopButton className={className} />
