@@ -74,7 +74,10 @@ function App() {
           path="/contact"
           element={<Contact className={className} langName={langName} />}
         />
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="*"
+          element={<NotFound className={className} langName={langName} />}
+        />
       </Routes>
 
       <ScrollToTopButton className={className} />
