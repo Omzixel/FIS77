@@ -4,6 +4,7 @@ import fbLogo from "../images/fbLogo.svg";
 import ytLogo from "../images/ytLogo.svg";
 import igLogo from "../images/igLogo.svg";
 import { Link } from "react-router-dom";
+import { textContent } from "@/components/text components/NotFoundTC";
 
 interface IProps {
   className: string;
@@ -19,18 +20,17 @@ const NotFound: FC<IProps> = ({ className, langName }) => {
         <TbMoodSad size={50} className="mx-auto" />
       </div>
       <p className="text-center text-3xl mb-2 font-semibold">
-        Oops, page not found!
+        {langName === "eng" ? textContent.eng.title : textContent.cro.title}
       </p>
       <p className="text-center mb-4 text-xl">
-        The page you're looking for doesn't seem to exist. Please check the URL
-        or try navigating back to the homepage.
+        {langName === "eng" ? textContent.eng.message : textContent.cro.message}
       </p>
       <div className="w-full max-w-xs mb-6">
         <Link
           to="/"
           className="text-white block bg-red-600 py-2 px-4 rounded-sm text-center hover:bg-red-500"
         >
-          Go to home page
+          {langName === "eng" ? textContent.eng.button : textContent.cro.button}
         </Link>
       </div>
       <div className="flex space-x-4">
