@@ -84,9 +84,9 @@ const Navbar: FC<IProps> = ({
                   )}
                 </Link>
                 <Link
-                  to="/products"
+                  to="/services"
                   className={`hover:text-red-500 font-medium relative group ${
-                    location.pathname === "/products"
+                    location.pathname === "/services"
                       ? "border-b-2 border-red-500"
                       : ""
                   }`}
@@ -94,7 +94,7 @@ const Navbar: FC<IProps> = ({
                   {langName === "eng"
                     ? textContent.eng.second_route
                     : textContent.cro.second_route}
-                  {location.pathname !== "/products" && (
+                  {location.pathname !== "/services" && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                   )}
                 </Link>
@@ -223,7 +223,7 @@ const Navbar: FC<IProps> = ({
                   : textContent.cro.first_route}
               </Link>
               <Link
-                to="/products"
+                to="/services"
                 className="hover:hover:text-red-500"
                 onClick={handleLinkClick}
               >

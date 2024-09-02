@@ -9,14 +9,14 @@ interface NavbarTC {
 export const textContent: { [key: string]: NavbarTC } = {
   cro: {
     first_route: "POČETNA",
-    second_route: "PROIZVODI",
+    second_route: "USLUGE",
     third_route: "GALERIJA",
     fourth_route: "O NAMA",
     fifth_route: "KONTAKT",
   },
   eng: {
     first_route: "HOME",
-    second_route: "PRODUCTS",
+    second_route: "SERVICES",
     third_route: "GALLERY",
     fourth_route: "ABOUT US",
     fifth_route: "CONTACT",

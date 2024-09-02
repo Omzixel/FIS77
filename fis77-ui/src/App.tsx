@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
+import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
@@ -59,8 +59,8 @@ function App() {
           element={<Home className={className} langName={langName} />}
         />
         <Route
-          path="/products"
-          element={<Products className={className} langName={langName} />}
+          path="/services"
+          element={<Services className={className} langName={langName} />}
         />
         <Route
           path="/gallery"
