@@ -1,4 +1,4 @@
-import { textContent } from "@/components/text components/ProductsTC";
+import { textContent } from "@/components/text components/ServicesTC";
 import { LuPaintbrush } from "react-icons/lu";
 import { FC } from "react";
 
@@ -15,11 +15,14 @@ const Services: FC<IProps> = ({ className, langName }) => {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Our Services
+                {langName === "eng"
+                  ? textContent.eng.main_title
+                  : textContent.cro.main_title}
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Capture your special moments with our professional photography
-                services.
+                {langName === "eng"
+                  ? textContent.eng.description
+                  : textContent.cro.description}
               </p>
             </div>
           </div>
@@ -27,46 +30,80 @@ const Services: FC<IProps> = ({ className, langName }) => {
             <div className="bg-background rounded-lg shadow-lg p-6">
               {" "}
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Portrait Sessions</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v1
+                  : textContent.cro.product_title.product_v1}
+              </h3>
               <p className="text-muted-foreground">
-                Capture timeless portraits of individuals, couples, or families.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v1
+                  : textContent.cro.product_description.product_v1}
               </p>
             </div>
             <div className="bg-background rounded-lg shadow-lg p-6">
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Family Photos</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v2
+                  : textContent.cro.product_title.product_v2}
+              </h3>
               <p className="text-muted-foreground">
-                Preserve your family's memories with beautiful group portraits.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v2
+                  : textContent.cro.product_description.product_v2}
               </p>
             </div>
             <div className="bg-background rounded-lg shadow-lg p-6">
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Headshots</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v3
+                  : textContent.cro.product_title.product_v3}
+              </h3>
               <p className="text-muted-foreground">
-                Professional headshots for your business or personal brand.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v3
+                  : textContent.cro.product_description.product_v3}
               </p>
             </div>
             <div className="bg-background rounded-lg shadow-lg p-6">
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Event Photography</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v4
+                  : textContent.cro.product_title.product_v4}
+              </h3>
               <p className="text-muted-foreground">
-                Capture the special moments of your events, weddings, or
-                parties.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v4
+                  : textContent.cro.product_description.product_v4}
               </p>
             </div>
             <div className="bg-background rounded-lg shadow-lg p-6">
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Product Photography</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v5
+                  : textContent.cro.product_title.product_v5}
+              </h3>
               <p className="text-muted-foreground">
-                High-quality product photography for your online store or
-                portfolio.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v5
+                  : textContent.cro.product_description.product_v5}
               </p>
             </div>
             <div className="bg-background rounded-lg shadow-lg p-6">
               <LuPaintbrush />
-              <h3 className="text-xl font-bold mb-2">Landscape Photography</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {langName === "eng"
+                  ? textContent.eng.product_title.product_v6
+                  : textContent.cro.product_title.product_v6}
+              </h3>
               <p className="text-muted-foreground">
-                Capture the beauty of nature and the great outdoors.
+                {langName === "eng"
+                  ? textContent.eng.product_description.product_v6
+                  : textContent.cro.product_description.product_v6}
               </p>
             </div>
           </div>
