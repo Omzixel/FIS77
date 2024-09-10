@@ -26,10 +26,10 @@
   @apply bg-gray-100 transition duration-300 ease-out;
 }
 
-.theme-dark-dark-text {
-  @apply text-[#121212] transition duration-300 ease-out;
+.theme-dark-container {
+  @apply bg-zinc-800;
 }
 
-.theme-dark-light-text {
-  @apply text-white transition duration-300 ease-out;
+.theme-light-container {
+  @apply bg-[#fafafa];
 }

@@ -1,5 +1,13 @@
 import { textContent } from "@/components/text components/ServicesTC";
 import { LuPaintbrush } from "react-icons/lu";
+import {
+  MdOutlineHeadsetMic,
+  MdEventAvailable,
+  MdFamilyRestroom,
+} from "react-icons/md";
+import { GiCardboardBoxClosed } from "react-icons/gi";
+import { HiOutlineBuildingLibrary } from "react-icons/hi2";
+
 import { FC } from "react";
 
 interface IProps {
@@ -27,7 +35,9 @@ const Services: FC<IProps> = ({ className, langName }) => {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-background rounded-lg shadow-lg p-6">
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
               {" "}
               <LuPaintbrush />
               <h3 className="text-xl font-bold mb-2">
@@ -41,8 +51,10 @@ const Services: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.product_description.product_v1}
               </p>
             </div>
-            <div className="bg-background rounded-lg shadow-lg p-6">
-              <LuPaintbrush />
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
+              <MdFamilyRestroom />
               <h3 className="text-xl font-bold mb-2">
                 {langName === "eng"
                   ? textContent.eng.product_title.product_v2
@@ -54,8 +66,10 @@ const Services: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.product_description.product_v2}
               </p>
             </div>
-            <div className="bg-background rounded-lg shadow-lg p-6">
-              <LuPaintbrush />
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
+              <MdOutlineHeadsetMic />
               <h3 className="text-xl font-bold mb-2">
                 {langName === "eng"
                   ? textContent.eng.product_title.product_v3
@@ -67,8 +81,10 @@ const Services: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.product_description.product_v3}
               </p>
             </div>
-            <div className="bg-background rounded-lg shadow-lg p-6">
-              <LuPaintbrush />
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
+              <MdEventAvailable />
               <h3 className="text-xl font-bold mb-2">
                 {langName === "eng"
                   ? textContent.eng.product_title.product_v4
@@ -80,8 +96,10 @@ const Services: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.product_description.product_v4}
               </p>
             </div>
-            <div className="bg-background rounded-lg shadow-lg p-6">
-              <LuPaintbrush />
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
+              <GiCardboardBoxClosed />
               <h3 className="text-xl font-bold mb-2">
                 {langName === "eng"
                   ? textContent.eng.product_title.product_v5
@@ -93,8 +111,11 @@ const Services: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.product_description.product_v5}
               </p>
             </div>
-            <div className="bg-background rounded-lg shadow-lg p-6">
-              <LuPaintbrush />
+            <div
+              className={`bg-background rounded-lg shadow-lg p-6 theme-${className}-container`}
+            >
+              <HiOutlineBuildingLibrary />
+
               <h3 className="text-xl font-bold mb-2">
                 {langName === "eng"
                   ? textContent.eng.product_title.product_v6
