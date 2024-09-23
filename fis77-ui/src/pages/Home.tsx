@@ -9,10 +9,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import React, { FC, useEffect, useState } from "react";
 
-import imgOne from "../images/imgCarousel1.jpg";
-import imgTwo from "../images/imgCarousel2.jpg";
-import imgThree from "../images/imgCarousel3.jpg";
-import imgFour from "../images/imgCarousel4.jpg";
 import photoIcon from "../images/photoIcon.svg";
 import videoIcon from "../images/videoIcon.svg";
 
@@ -28,10 +24,10 @@ const Home: FC<IProps> = ({ className, langName }) => {
     const fetchImages = async () => {
       try {
         const imageUrls = [
-          `${imgOne}`,
-          `${imgTwo}`,
-          `${imgThree}`,
-          `${imgFour}`,
+          "https://anjix3.sirv.com/Images/imgCarousel1.jpg",
+          "https://anjix3.sirv.com/Images/imgCarousel2.jpg",
+          "https://anjix3.sirv.com/Images/imgCarousel3.jpg",
+          "https://anjix3.sirv.com/Images/imgCarousel4.jpg",
         ];
         setImages(imageUrls);
       } catch (error) {

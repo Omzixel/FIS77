@@ -2,16 +2,6 @@ import { textContent } from "@/components/text components/GalleryTC";
 import { FC, useEffect, useState } from "react";
 import Modal from "react-modal";
 
-import imgOne from "../images/imgGallery1.jpg";
-import imgTwo from "../images/imgGallery2.jpg";
-import imgThree from "../images/imgGallery3.jpg";
-import imgFour from "../images/imgGallery4.jpg";
-import imgFive from "../images/imgGallery5.jpg";
-import imgSix from "../images/imgGallery6.jpg";
-import imgSeven from "../images/imgGallery7.jpg";
-import imgEight from "../images/imgGallery8.jpg";
-import imgNine from "../images/imgGallery9.jpg";
-
 interface IProps {
   className: string;
   langName: string;
@@ -23,19 +13,16 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     null
   );
 
-  const localImages = [
-    imgOne,
-    imgTwo,
-    imgThree,
-    imgFour,
-    imgFive,
-    imgSix,
-    imgSeven,
-    imgEight,
-    imgNine,
-  ];
-
   const urlImages = [
+    "https://anjix3.sirv.com/Images/imgGallery10.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery11.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery12.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery13.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery14.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery15.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery16.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery17.jpg",
+    "https://anjix3.sirv.com/Images/imgGallery18.jpg",
     "https://anjix3.sirv.com/Images/cloudImg1.jpg",
     "https://anjix3.sirv.com/Images/cloudImg2.jpg",
     "https://anjix3.sirv.com/Images/cloudImg3.jpg",
@@ -46,8 +33,6 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     "https://anjix3.sirv.com/Images/cloudImg8.jpg",
     "https://anjix3.sirv.com/Images/cloudImg9.jpg",
   ];
-
-  const allImages = [...localImages, ...urlImages];
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -67,9 +52,9 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => {
         if (direction === "prev") {
-          return prevIndex === 0 ? allImages.length - 1 : prevIndex! - 1;
+          return prevIndex === 0 ? urlImages.length - 1 : prevIndex! - 1;
         } else {
-          return prevIndex === allImages.length - 1 ? 0 : prevIndex! + 1;
+          return prevIndex === urlImages.length - 1 ? 0 : prevIndex! + 1;
         }
       });
     }
@@ -78,7 +63,7 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
       <div className="flex flex-wrap justify-center gap-5 py-2 p-12">
-        {allImages.map((image, index) => (
+        {urlImages.map((image, index) => (
           <div key={image} className="w-1/4">
             <img
               src={image}
@@ -127,7 +112,7 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.btn_previous}
             </button>
             <img
-              src={allImages[selectedImageIndex]}
+              src={urlImages[selectedImageIndex]}
               className="max-h-screen max-w-screen mx-auto"
               alt={`${selectedImageIndex + 1}`}
             />
