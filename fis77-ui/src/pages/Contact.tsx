@@ -107,14 +107,16 @@ const Contact: FC<IProps> = ({ className, langName }) => {
 
   return (
     <section className={`theme-${className}-text theme-${className}-main`}>
-      <section
+      <header
         className="bg-cover h-96"
         style={{
           backgroundImage: 'url("https://anjix3.sirv.com/Images/contact.jpg")',
         }}
-      ></section>
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
-        <div>
+        aria-label="Contact page header image"
+      ></header>
+
+      <main className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
+        <article>
           <h2 className="text-2xl font-bold mb-4">
             {langName === "eng"
               ? textContent.eng.section_info.miniTitle
@@ -135,29 +137,46 @@ const Contact: FC<IProps> = ({ className, langName }) => {
               ? textContent.eng.section_info.workingHours
               : textContent.cro.section_info.workingHours}
           </p>
+
           <br />
-          <p className="font-bold">Ivankovo</p>
-          <div className="map-container border border-gray-300 rounded-sm">
-            <iframe
-              title="Ivankovo location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.181713586857!2d18.675519076622386!3d45.28454964540689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cf5f23980f7c9%3A0xb85fac8a9e7b813!2sGorjani%2081%2C%2032281%2C%20Ivankovo!5e0!3m2!1sen!2shr!4v1711467646995!5m2!1sen!2shr"
-              width="100%"
-              height="300"
-              className="border-0"
-            ></iframe>
-          </div>
+          <section aria-labelledby="location-ivankovo">
+            <h3 id="location-ivankovo" className="font-bold">
+              Ivankovo
+            </h3>
+            <div className="map-container border border-gray-300 rounded-sm">
+              <iframe
+                title="Ivankovo location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.181713586857!2d18.675519076622386!3d45.28454964540689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cf5f23980f7c9%3A0xb85fac8a9e7b813!2sGorjani%2081%2C%2032281%2C%20Ivankovo!5e0!3m2!1sen!2shr!4v1711467646995!5m2!1sen!2shr"
+                width="100%"
+                height="300"
+                className="border-0"
+                allowFullScreen=""
+                loading="lazy"
+                aria-label="Google map showing Ivankovo location"
+              ></iframe>
+            </div>
+          </section>
+
           <br />
-          <p className="font-bold">Zagreb</p>
-          <div className="map-container border border-gray-300 rounded-sm">
-            <iframe
-              title="Zagreb location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.201861984417!2d15.898022276644411!3d45.80721551048621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d11567facb51%3A0x5d647405c763b360!2sUl.%20Janka%20Matka%202%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1716305654094!5m2!1shr!2shr"
-              width="100%"
-              height="300"
-              className="border-0"
-            ></iframe>
-          </div>
-        </div>
+          <section aria-labelledby="location-zagreb">
+            <h3 id="location-zagreb" className="font-bold">
+              Zagreb
+            </h3>
+            <div className="map-container border border-gray-300 rounded-sm">
+              <iframe
+                title="Zagreb location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.201861984417!2d15.898022276644411!3d45.80721551048621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d11567facb51%3A0x5d647405c763b360!2sUl.%20Janka%20Matka%202%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1716305654094!5m2!1shr!2shr"
+                width="100%"
+                height="300"
+                className="border-0"
+                allowFullScreen=""
+                loading="lazy"
+                aria-label="Google map showing Zagreb location"
+              ></iframe>
+            </div>
+          </section>
+        </article>
+
         <div className="max-w-md">
           <h1 className="text-4xl font-bold mb-8">
             {langName === "eng" ? textContent.eng.title : textContent.cro.title}
@@ -177,6 +196,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 onChange={(e) => setName(e.target.value)}
                 className="w-full border p-2 rounded-sm text-black"
                 required
+                aria-label="Your full name"
               />
             </div>
 
@@ -193,6 +213,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full border p-2 rounded-sm text-black"
                 required
+                aria-label="Your email address"
               />
             </div>
 
@@ -208,6 +229,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full border p-2 rounded-sm text-black"
                 required
+                aria-label="Your message"
               ></textarea>
             </div>
             <button
@@ -253,7 +275,7 @@ const Contact: FC<IProps> = ({ className, langName }) => {
             )}
           </form>
         </div>
-      </div>
+      </main>
     </section>
   );
 };

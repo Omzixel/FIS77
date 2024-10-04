@@ -59,15 +59,18 @@ const Home: FC<IProps> = ({ className, langName }) => {
 
           <div className="text-white w-1/3 mx-auto flex">
             <hr className="w-1/6" />
-            {langName === "eng"
-              ? textContent.eng.bg_img_text
-              : textContent.cro.bg_img_text}
+            <span>
+              {langName === "eng"
+                ? textContent.eng.bg_img_text
+                : textContent.cro.bg_img_text}
+            </span>
             <hr className="w-1/6" />
           </div>
         </div>
       </section>
+
       <div className="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 gap-8">
-        <div
+        <article
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
         >
           <h2 className="text-3xl font-bold text-center mb-6">
@@ -80,13 +83,14 @@ const Home: FC<IProps> = ({ className, langName }) => {
               ? textContent.eng.section1.text
               : textContent.cro.section1.text}
           </p>
-        </div>
+        </article>
 
-        <div
+        <section
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
+          aria-labelledby="photo-section"
         >
-          <h3 className="text-2xl font-semibold mb-4 flex">
-            <img className="w-10 mr-3" src={photoIcon} alt="Frame pic icon" />
+          <h3 id="photo-section" className="text-2xl font-semibold mb-4 flex">
+            <img className="w-10 mr-3" src={photoIcon} alt="Frame icon" />
             {langName === "eng"
               ? textContent.eng.section2.title
               : textContent.cro.section2.title}
@@ -123,13 +127,15 @@ const Home: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.section2.text_events}
             </li>
           </ul>
+
           <Carousel plugins={[plugin.current]}>
             <CarouselContent>
               {images.map((imageUrl, index) => (
                 <CarouselItem key={imageUrl}>
                   <img
                     src={imageUrl}
-                    alt={`${index}`}
+                    alt={`Photo gallery image ${index + 1}`}
+                    loading="lazy"
                     className="w-full h-auto"
                   />
                 </CarouselItem>
@@ -138,11 +144,13 @@ const Home: FC<IProps> = ({ className, langName }) => {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
-        <div
+        </section>
+
+        <section
           className={`theme-${className}-secondary rounded-lg shadow-lg p-6`}
+          aria-labelledby="video-section"
         >
-          <h3 className="text-2xl font-semibold mb-4 flex">
+          <h3 id="video-section" className="text-2xl font-semibold mb-4 flex">
             <img className="w-8 mr-3" src={videoIcon} alt="Video icon" />
             {langName === "eng"
               ? textContent.eng.section3.title
@@ -162,7 +170,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
             <li className="mb-4">
               <strong>
                 {langName === "eng"
-                  ? textContent.eng.section3.subTitle1
+                  ? textContent.eng.section3.subTitle2
                   : textContent.cro.section3.subTitle2}
               </strong>{" "}
               {langName === "eng"
@@ -180,7 +188,7 @@ const Home: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.section3.text_music}
             </li>
           </ul>
-        </div>
+        </section>
       </div>
     </div>
   );

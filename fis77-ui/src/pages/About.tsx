@@ -9,31 +9,35 @@ interface IProps {
 const About: FC<IProps> = ({ className, langName }) => {
   return (
     <div className={`theme-${className}-text theme-${className}-main`}>
-      <section
+      <header
         className="bg-cover h-96"
         style={{
           backgroundImage: 'url("https://anjix3.sirv.com/Images/about.jpg")',
         }}
+        aria-label="Hero section with studio name"
       >
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold text-white h-24 pt-10">
             Foto Ivan Studio 77
           </h1>
         </div>
-      </section>
-      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center">
-        <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
+      </header>
+
+      <main className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center">
+        <article className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
           <img
             className="rounded-lg w-full"
             src="https://anjix3.sirv.com/Images/aboutMain.jpg"
-            alt="Couple near lake"
+            alt="A couple near the lake captured by Foto Ivan Studio 77"
           />
-        </div>
-        <div className="w-full md:w-1/2 pl-0 md:pl-8">
-          <h1 className="text-4xl font-bold mb-5 mt-5 ml-7">
+        </article>
+
+        <section className="w-full md:w-1/2 pl-0 md:pl-8">
+          <h2 className="text-4xl font-bold mb-5 mt-5 ml-7">
             {langName === "eng" ? textContent.eng.title : textContent.cro.title}
-          </h1>
-          <div className=" p-8">
+          </h2>
+
+          <div className="p-8">
             <p className="mb-4">
               {langName === "eng"
                 ? textContent.eng.section1
@@ -60,8 +64,8 @@ const About: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.section5}
             </p>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 };
