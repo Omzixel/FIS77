@@ -150,7 +150,6 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 width="100%"
                 height="300"
                 className="border-0"
-                allowFullScreen=""
                 loading="lazy"
                 aria-label="Google map showing Ivankovo location"
               ></iframe>
@@ -169,7 +168,6 @@ const Contact: FC<IProps> = ({ className, langName }) => {
                 width="100%"
                 height="300"
                 className="border-0"
-                allowFullScreen=""
                 loading="lazy"
                 aria-label="Google map showing Zagreb location"
               ></iframe>

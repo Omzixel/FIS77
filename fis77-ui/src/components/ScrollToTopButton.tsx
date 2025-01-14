@@ -33,7 +33,7 @@ const ScrollToTopButton: React.FC<ScrollToTopScrollToTopButtonProps> = ({
         <BsArrowUpSquareFill
           onClick={scrollToTop}
           className={`fixed bottom-8 right-8 rounded-md duration-300 cursor-pointer ${
-            className === "light" ? "border bg-white" : ""
+            className === "light" ? "border bg-white" : "border bg-white"
           }`}
           size={35}
         />
