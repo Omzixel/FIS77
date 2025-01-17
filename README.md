@@ -1,25 +1,30 @@
 # Foto Ivan Studio 77
 
-Welcome to the Foto Ivan Studio 77 GitLab project! This project is dedicated to promoting our photo studio and showcasing our work.
+Welcome to the Foto Ivan Studio 77 GitLab project! This project is dedicated to promoting the photo studio and showcasing its work.
 
-## About Us
+## About Foto Ivan Studio 77
 
-Foto Ivan Studio 77 is a premier photo studio specializing in capturing memorable moments for our clients. With our team of experienced photographers and state-of-the-art equipment, we provide high-quality photography services for various occasions including weddings, portraits, events, and more.
+Foto Ivan Studio 77 is a premier photo studio specializing in capturing memorable moments for its clients. With a team of experienced photographers and state-of-the-art equipment, the studio provides high-quality photography services for various occasions, including weddings, portraits, events, and more.
 
 ## Features
 
-- **Services**: Learn about the services we offer and the packages available for different types of events.
-- **Contact**: Get in touch with us for inquiries, bookings, or collaborations.
+- **Services**: Explore the services offered and the packages available for different types of events.
+- **Contact**: Reach out for inquiries, bookings, or collaborations.
+
+## Prerequisites
+
+- Docker
+- Node.js and NPM
 
 ## Necessary environment variables:
 
 To send an email, the app utilizes EmailJS. Here are the values you get from EmailJS so you can send an email.
 
-```bash
-VITE_TEMPLATE_ID=
-VITE_SERVICE_ID=
-VITE_USER_ID=
-```
+| Name             | Value |
+| ---------------- | ----- |
+| VITE_TEMPLATE_ID |       |
+| VITE_SERVICE_ID  |       |
+| VITE_USER_ID     |       |
 
 ## Local development
 

@@ -1,4 +1,4 @@
-FROM node:21.7.1-alpine@sha256:577f8eb599858005100d84ef3fb6bd6582c1b6b17877a393cdae4bfc9935f068 AS builder
+FROM node:22.13.0-alpine AS builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-FROM nginx:1.25.4-alpine@sha256:31bad00311cb5eeb8a6648beadcf67277a175da89989f14727420a80e2e76742
+FROM nginx:1.26.2-alpine
 
 RUN rm -rf /etc/nginx/conf.d/*
 
