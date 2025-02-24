@@ -110,7 +110,8 @@ const Contact: FC<IProps> = ({ className, langName }) => {
       <header
         className="bg-cover h-96"
         style={{
-          backgroundImage: 'url("https://anjix3.sirv.com/Images/contact.jpg")',
+          backgroundImage:
+            'url("https://anjix3.sirv.com/Images/contactRE.JPG")',
         }}
         aria-label="Contact page header image"
       ></header>

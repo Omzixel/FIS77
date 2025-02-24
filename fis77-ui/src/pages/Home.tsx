@@ -19,6 +19,7 @@ interface IProps {
 
 const Home: FC<IProps> = ({ className, langName }) => {
   const [images, setImages] = useState<string[]>([]);
+  const [realEstateImages, setRealEstateImages] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -35,11 +36,30 @@ const Home: FC<IProps> = ({ className, langName }) => {
       }
     };
 
+    const fetchRealEstateImages = async () => {
+      try {
+        const imageRealEstateUrls = [
+          "https://anjix3.sirv.com/Images/realEstate1.JPG",
+          "https://anjix3.sirv.com/Images/realEstate2.JPG",
+          "https://anjix3.sirv.com/Images/realEstate3.JPG",
+          "https://anjix3.sirv.com/Images/realEstate4.JPG",
+        ];
+        setRealEstateImages(imageRealEstateUrls);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
     fetchImages();
+    fetchRealEstateImages();
   }, []);
 
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
+  const plugin2 = React.useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: true })
   );
 
   return (
@@ -47,24 +67,23 @@ const Home: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage: 'url("https://anjix3.sirv.com/Images/home.jpg")',
+          backgroundImage:
+            'url("https://anjix3.sirv.com/Images/realEstate4.JPG")',
         }}
       >
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-white mb-8">
+          <h1 className="text-4xl font-bold text-black mb-8 pt-5">
             {langName === "eng"
               ? textContent.eng.bg_main_text
               : textContent.cro.bg_main_text}
           </h1>
 
-          <div className="text-white w-1/3 mx-auto flex">
-            <hr className="w-1/6" />
+          <div className="text-black w-1/3 mx-auto flex">
             <span>
               {langName === "eng"
                 ? textContent.eng.bg_img_text
                 : textContent.cro.bg_img_text}
             </span>
-            <hr className="w-1/6" />
           </div>
         </div>
       </section>
@@ -123,8 +142,8 @@ const Home: FC<IProps> = ({ className, langName }) => {
                   : textContent.cro.section2.subTitle3}
               </strong>{" "}
               {langName === "eng"
-                ? textContent.eng.section2.text_events
-                : textContent.cro.section2.text_events}
+                ? textContent.eng.section2.text_products
+                : textContent.cro.section2.text_products}
             </li>
           </ul>
 
@@ -134,6 +153,23 @@ const Home: FC<IProps> = ({ className, langName }) => {
                 <CarouselItem key={imageUrl}>
                   <img
                     src={imageUrl}
+                    alt={`Photo gallery image ${index + 1}`}
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+
+          <Carousel plugins={[plugin2.current]} className="mt-10">
+            <CarouselContent>
+              {realEstateImages.map((realEstateImageUrl, index) => (
+                <CarouselItem key={realEstateImageUrl}>
+                  <img
+                    src={realEstateImageUrl}
                     alt={`Photo gallery image ${index + 1}`}
                     loading="lazy"
                     className="w-full h-auto"
