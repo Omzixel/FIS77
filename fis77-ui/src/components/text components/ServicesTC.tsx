@@ -30,7 +30,7 @@ export const textContent: { [key: string]: ServicesTC } = {
       product_v3: "Portreti Glave",
       product_v4: "Fotografiranje Događaja",
       product_v5: "Fotografiranje Proizvoda",
-      product_v6: "Pejzažna Fotografija",
+      product_v6: "Fotografiranje interijera i eksterijera",
     },
     product_description: {
       product_v1:
@@ -43,7 +43,7 @@ export const textContent: { [key: string]: ServicesTC } = {
         "Zabilježite posebne trenutke vaših događanja, vjenčanja ili zabava.",
       product_v5:
         "Visokokvalitetne fotografije proizvoda za vašu online trgovinu ili portfolio.",
-      product_v6: "Zabilježite ljepotu prirode i otvorenih prostora.",
+      product_v6: "Prikažite ljepotu prostora, iznutra i izvana.",
     },
   },
   eng: {
@@ -56,7 +56,7 @@ export const textContent: { [key: string]: ServicesTC } = {
       product_v3: "Headshots",
       product_v4: "Event Photography",
       product_v5: "Product Photography",
-      product_v6: "Landscape Photography",
+      product_v6: "Interior and exterior photography",
     },
     product_description: {
       product_v1:
@@ -68,7 +68,7 @@ export const textContent: { [key: string]: ServicesTC } = {
         "Capture the special moments of your events, weddings, or parties.",
       product_v5:
         "High-quality product photography for your online store or portfolio.",
-      product_v6: "Capture the beauty of nature and the great outdoors.",
+      product_v6: "Showcase the beauty of the space, inside and out.",
     },
   },
 };

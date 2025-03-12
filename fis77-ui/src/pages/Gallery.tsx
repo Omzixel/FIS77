@@ -12,8 +12,9 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+  const [galleryType, setGalleryType] = useState<string>("wedding");
 
-  const urlImages = [
+  const urlImagesWedding = [
     "https://anjix3.sirv.com/Images/imgGallery10.jpg",
     "https://anjix3.sirv.com/Images/imgGallery11.jpg",
     "https://anjix3.sirv.com/Images/imgGallery12.jpg",
@@ -34,6 +35,18 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
     "https://anjix3.sirv.com/Images/cloudImg9.jpg",
   ];
 
+  const urlImagesRealEstate = [
+    "https://anjix3.sirv.com/Images/cloudImgRe%201.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%202.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%203.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%204.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%205.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%206.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%207.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%208.JPG",
+    "https://anjix3.sirv.com/Images/cloudImgRe%209.JPG",
+  ];
+
   useEffect(() => {
     Modal.setAppElement("#root");
   }, []);
@@ -49,21 +62,59 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
   };
 
   const navigate = (direction: "prev" | "next") => {
+    const images =
+      galleryType === "wedding" ? urlImagesWedding : urlImagesRealEstate;
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => {
+        const currentIndex = prevIndex ?? 0;
         if (direction === "prev") {
-          return prevIndex === 0 ? urlImages.length - 1 : prevIndex! - 1;
+          return currentIndex === 0 ? images.length - 1 : currentIndex - 1;
         } else {
-          return prevIndex === urlImages.length - 1 ? 0 : prevIndex! + 1;
+          return currentIndex === images.length - 1 ? 0 : currentIndex + 1;
         }
       });
     }
   };
 
+  const toggleGalleryType = (type: string) => {
+    setGalleryType(type);
+    closeModal();
+  };
+
   return (
     <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
+      <div className="flex justify-center gap-10 p-8 ">
+        <button
+          onClick={() => toggleGalleryType("wedding")}
+          className={`bg-red-600 text-white w-1/12 p-3 rounded-sm font-bold ${
+            galleryType === "wedding"
+              ? "transition duration-300 ease-out"
+              : "scale-75 text-opacity-30 transition duration-300 ease-out"
+          }`}
+        >
+          {langName === "eng"
+            ? textContent.eng.btn_wedding
+            : textContent.cro.btn_wedding}
+        </button>
+        <button
+          onClick={() => toggleGalleryType("realEstate")}
+          className={`bg-red-600 text-white w-1/12 p-2 rounded-sm font-bold  ${
+            galleryType === "realEstate"
+              ? "transition duration-300 ease-out"
+              : "scale-75 text-opacity-30 transition duration-300 ease-out"
+          }`}
+        >
+          {langName === "eng"
+            ? textContent.eng.btn_realEstate
+            : textContent.cro.btn_realEstate}
+        </button>
+      </div>
+
       <div className="flex flex-wrap justify-center gap-5 py-2 p-12">
-        {urlImages.map((image, index) => (
+        {(galleryType === "wedding"
+          ? urlImagesWedding
+          : urlImagesRealEstate
+        ).map((image, index) => (
           <div key={image} className="w-1/4">
             <img
               src={image}
@@ -117,7 +168,11 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
                 : textContent.cro.btn_previous}
             </button>
             <img
-              src={urlImages[selectedImageIndex]}
+              src={
+                (galleryType === "wedding"
+                  ? urlImagesWedding
+                  : urlImagesRealEstate)[selectedImageIndex]
+              }
               className="max-h-screen max-w-screen mx-auto"
               alt={`Gallery image ${selectedImageIndex + 1}`}
             />

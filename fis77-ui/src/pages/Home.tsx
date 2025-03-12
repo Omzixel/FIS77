@@ -67,18 +67,17 @@ const Home: FC<IProps> = ({ className, langName }) => {
       <section
         className="bg-cover h-96"
         style={{
-          backgroundImage:
-            'url("https://anjix3.sirv.com/Images/realEstate4.JPG")',
+          backgroundImage: 'url("https://anjix3.sirv.com/Images/home.jpg")',
         }}
       >
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-black mb-8 pt-5">
+          <h1 className="text-4xl font-bold text-white mb-8 pt-5">
             {langName === "eng"
               ? textContent.eng.bg_main_text
               : textContent.cro.bg_main_text}
           </h1>
 
-          <div className="text-black w-1/3 mx-auto flex">
+          <div className="text-white w-1/3 mx-auto flex">
             <span>
               {langName === "eng"
                 ? textContent.eng.bg_img_text
