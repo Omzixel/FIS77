@@ -83,14 +83,12 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
 
   return (
     <div className={`theme-${className}-text theme-${className}-main mx-auto`}>
-      <div className="flex justify-center gap-10 p-8 ">
+      <div className="flex flex-col items-center p-4 md:flex-row md:justify-center md:gap-10">
         <button
           onClick={() => toggleGalleryType("wedding")}
-          className={`bg-red-600 text-white w-1/12 p-3 rounded-sm font-bold ${
-            galleryType === "wedding"
-              ? "transition duration-300 ease-out"
-              : "scale-75 text-opacity-30 transition duration-300 ease-out"
-          }`}
+          className={`bg-red-600 text-white w-1/3 md:w-auto p-3 rounded-sm font-bold mb-4 md:mb-0 ${
+            galleryType === "wedding" ? "opacity-100" : "opacity-30"
+          } transition duration-300 ease-out`}
         >
           {langName === "eng"
             ? textContent.eng.btn_wedding
@@ -98,11 +96,9 @@ const Gallery: FC<IProps> = ({ className, langName }) => {
         </button>
         <button
           onClick={() => toggleGalleryType("realEstate")}
-          className={`bg-red-600 text-white w-1/12 p-2 rounded-sm font-bold  ${
-            galleryType === "realEstate"
-              ? "transition duration-300 ease-out"
-              : "scale-75 text-opacity-30 transition duration-300 ease-out"
-          }`}
+          className={`bg-red-600 text-white w-1/3 md:w-auto p-3 rounded-sm font-bold ${
+            galleryType === "realEstate" ? "opacity-100" : "opacity-30"
+          } transition duration-300 ease-out`}
         >
           {langName === "eng"
             ? textContent.eng.btn_realEstate
